@@ -1,0 +1,10 @@
+.vs/
+.vscode/
+bin/
+scripts/__pycache__/
+allstat/allstat.vcxproj.user
+tests/testall/testall.vcxproj.user
+Tests/WhatIs/WhatIs.xcodeproj/xcuserdata/
+Tests/TestAll/TestAll.xcodeproj/xcuserdata/
+AllStat.xcodeproj/project.xcworkspace/xcuserdata/
+AllStat/AllStat.xcodeproj/xcuserdata/

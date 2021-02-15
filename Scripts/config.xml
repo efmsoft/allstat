@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<config>
+  <output>
+    <cpp>../allstat/source/generated</cpp>
+    <h>../allstat/include/allstat</h>
+  </output>
+  <ntstatus>
+    <source>z:\tools\mssdk\include\shared\ntstatus.h</source>
+    <cpp>tNtStatus.cpp</cpp>
+    <h>ntstatus.h</h>
+  </ntstatus>
+  <http>
+    <source>../allstat/source/Http.cpp</source>
+    <cpp>tHttp.cpp</cpp>
+    <h>http.h</h>
+  </http>
+  <lresult>
+    <source>z:\tools\mssdk\include\shared\winerror.h</source>
+    <cpp>tLResult.cpp</cpp>
+    <h>lresult.h</h>
+  </lresult>
+  <hresult>
+    <!--source>z:\tools\mssdk\include\shared\winerror.h</source-->
+    <source>z:\tools\mssdk\include\**\*.h</source>
+    <cpp>tHResult.cpp</cpp>
+    <h>hresult.h</h>
+  </hresult>
+  <map>
+    <hpp2source>
+      <item key="Tapi3Err.h" value="TAPI 3.0"/>
+      <item key="Mq.h" value="Message Queuing applications"/>
+      <item key="slerror.h" value="Software Licensing"/>
+      <item key="rtcerr.h" value="RTC Core"/>
+      <item key="imapi2fserror.h" value="Image Mastering"/>
+      <item key="imapi2error.h" value="Image Mastering"/>
+      <item key="wuerror.h" value="Windows Update"/>
+      <item key="wcmerrors.h" value="Windows Config Managemen"/>
+      <item key="Mferror.h" value="Windows Media Foundation"/>
+      <item key="nserror.h" value="Windows Media"/>
+      <item key="winbio_err.h" value="Windows Biometric Framework"/>
+      <item key="fsrmerr.h" value="File Server Resource Management service"/>
+      <item key="vdserr.h" value="Virtual Disk Service"/>
+      <item key="vsserror.h" value="Volume Shadow copy Services"/>
+      <item key="Filterr.h" value="Indexing Service"/>
+      <item key="CiError.h" value="Indexing Service"/>
+      <item key="oledberr.h" value="Microsoft OLE DB"/>
+      <item key="WindowsSearchErrors.h" value="Windows Search Service"/>
+      <item key="vfwmsgs.h" value="Video for Windows"/>
+      <item key="AdsErr.h" value="Active Directory Service"/>
+      <item key="WdsTptMgmtMsg.h" value="Windows Deployment Services"/>
+      <item key="wdsmcerr.h" value="Windows Deployment Services"/>
+      <item key="WdsCpMsg.h" value="Windows Deployment Services"/>
+      <item key="NtDsBMsg.h" value="Directory Service Backup/Restore"/>
+      <item key="functiondiscoveryerror.h" value="Web Services Function Discovery"/>
+    </hpp2source>
+  </map>
+</config>

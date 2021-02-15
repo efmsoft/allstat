@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\generated">
+      <UniqueIdentifier>{3775e3fa-7e24-49cb-a008-f4fa3a999f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\AllStat">
+      <UniqueIdentifier>{00c153ed-6d87-4a51-81a4-436a4dd33613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\zlib">
+      <UniqueIdentifier>{aaeabd25-2c98-4d98-9f4c-cc82dd5ed923}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\NtStatus.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AllStat.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\generated\tNtStatus.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Http.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\generated\tHttp.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\generated\tHresult.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Winerror.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Hresult.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\generated\tLResult.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Description.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\AllStatDefs.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\hresult.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\http.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\lresult.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\ntstatus.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\Types.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allstat\AllStat.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
