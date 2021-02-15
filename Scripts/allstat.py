@@ -50,7 +50,7 @@ HPP_HEADER = \
     "#ifndef {}\n" \
     "#define {}\n" \
     "\n" \
-    "#include \"allstat.h\"\n" \
+    "#include \"AllStat.h\"\n" \
     "\n" \
     "AS_NAMESPACE_BEGIN()\n" \
     "\n" \
