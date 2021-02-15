@@ -5,7 +5,7 @@
     <h>../allstat/include/allstat</h>
   </output>
   <ntstatus>
-    <source>z:\tools\mssdk\include\shared\ntstatus.h</source>
+    <source>./data/ntstatus.h</source>
     <cpp>tNtStatus.cpp</cpp>
     <h>ntstatus.h</h>
   </ntstatus>
@@ -15,13 +15,13 @@
     <h>http.h</h>
   </http>
   <lresult>
-    <source>z:\tools\mssdk\include\shared\winerror.h</source>
+    <source>./data/mssdk/shared/winerror.h</source>
     <cpp>tLResult.cpp</cpp>
     <h>lresult.h</h>
   </lresult>
   <hresult>
-    <!--source>z:\tools\mssdk\include\shared\winerror.h</source-->
-    <source>z:\tools\mssdk\include\**\*.h</source>
+    <source>./data/mssdk/**/*.h</source>
+    <!--source>z:\tools\mssdk\include\**\*.h</source-->
     <cpp>tHResult.cpp</cpp>
     <h>hresult.h</h>
   </hresult>

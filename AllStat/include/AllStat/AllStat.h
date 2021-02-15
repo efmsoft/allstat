@@ -63,6 +63,11 @@ uint32_t Name2WinerrItem(const char* constant_name, PAS_ITEM pitem);
 uint32_t Name2HresultItem(const char* constant_name, PAS_ITEM pitem);
 uint32_t Name2HttpCodeItem(const char* constant_name, PAS_ITEM pitem);
 
+// The default is the current operating system. The status/error code search functions 
+// use this value to filter the returned data. Use AS_OS_ANY to switch off filtering
+void SetTargetOS(AS_OS os);
+AS_OS GetTargetOS();
+
 #ifdef __cplusplus
 }
 #endif

@@ -13,6 +13,35 @@ using namespace AllStat;
 #define stricmp strcasecmp
 #endif
 
+#ifdef _WIN32
+AS_OS TargetOS = AS_OS::AS_OS_WINDOWS;
+#elif defined(__APPLE__)
+AS_OS TargetOS = AS_OS::AS_OS_MAC;
+#elif defined(__sun__)
+AS_OS TargetOS = AS_OS::AS_OS_SOLARIS;
+#else
+AS_OS TargetOS = AS_OS::AS_OS_LINUX;
+#endif
+
+void SetTargetOS(AS_OS os)
+{
+  switch (os)
+  {
+    case AS_OS_ANY:
+    case AS_OS_WINDOWS:
+    case AS_OS_LINUX:
+    case AS_OS_MAC:
+    case AS_OS_SOLARIS:
+      TargetOS = os;
+      return;
+  }
+}
+
+AS_OS GetTargetOS()
+{
+  return TargetOS;  
+}
+
 uint32_t AllStat::HashStr(const char* p)
 {
   uint32_t hash = 0;
@@ -56,7 +85,10 @@ const STATUS_ITEM* AllStat::EntryByCode(
 
     const STATUS_ITEM& si = table[index];
     if (si.Code == code)
-      return &table[index];
+    { 
+      if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
+        return &table[index];
+    }
   }
   return nullptr;
 }
@@ -86,7 +118,10 @@ const STATUS_ITEM* AllStat::EntryByName(
 
     const STATUS_ITEM& si = table[index];
     if (!stricmp(si.Name, name))
-      return &table[index];
+    {
+      if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
+        return &table[index];
+    }
   }
   return nullptr;
 }
@@ -116,7 +151,10 @@ StatusItemArray AllStat::EntryByCodeArray(
 
     const STATUS_ITEM& si = table[index];
     if (si.Code == code)
-      arr.push_back(&table[index]);
+    {
+      if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
+        arr.push_back(&table[index]);
+    }
   }
   return arr;
 }
@@ -148,7 +186,10 @@ StatusItemArray AllStat::EntryByNameArray(
 
     const STATUS_ITEM& si = table[index];
     if (!stricmp(si.Name, name))
-      arr.push_back(&table[index]);
+    { 
+      if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
+        arr.push_back(&table[index]);
+    }
   }
   return arr;
 }
