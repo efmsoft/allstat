@@ -50,6 +50,12 @@
     <ClCompile Include="source\Description.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\generated\tErrno.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Errno.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AllStatDefs.h">
@@ -71,6 +77,9 @@
       <Filter>include\AllStat</Filter>
     </ClInclude>
     <ClInclude Include="include\allstat\AllStat.h">
+      <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AllStat\errno.h">
       <Filter>include\AllStat</Filter>
     </ClInclude>
   </ItemGroup>

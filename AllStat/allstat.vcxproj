@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="source\AllStat.cpp" />
     <ClCompile Include="source\Description.cpp" />
+    <ClCompile Include="source\Errno.cpp" />
+    <ClCompile Include="source\generated\tErrno.cpp" />
     <ClCompile Include="source\generated\tHresult.cpp" />
     <ClCompile Include="source\generated\tHttp.cpp" />
     <ClCompile Include="source\generated\tLResult.cpp" />
@@ -32,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\allstat\AllStat.h" />
+    <ClInclude Include="include\AllStat\errno.h" />
     <ClInclude Include="include\allstat\hresult.h" />
     <ClInclude Include="include\allstat\http.h" />
     <ClInclude Include="include\allstat\lresult.h" />

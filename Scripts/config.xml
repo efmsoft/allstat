@@ -4,6 +4,14 @@
     <cpp>../allstat/source/generated</cpp>
     <h>../allstat/include/allstat</h>
   </output>
+  <errno>
+    <source>./data/errno/Linux/errno.h</source>
+    <source>./data/errno/Mac/errno.h</source>
+    <source>./data/errno/Solaris/errno.h</source>
+    <source>./data/errno/Windows/errno.h</source>
+    <cpp>tErrno.cpp</cpp>
+    <h>errno.h</h>
+  </errno>
   <ntstatus>
     <source>./data/ntstatus.h</source>
     <cpp>tNtStatus.cpp</cpp>

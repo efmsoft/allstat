@@ -25,15 +25,23 @@ void Code2Name(const Config& c)
 {
   bool f = false;
 
+  auto aaen = ErrnoInfo(c.Value);
   auto aant = NtStatusInfo(c.Value);
   auto aalr = WinerrInfo(c.Value);
   auto aahr = HresultInfo(c.Value);
   auto aahttp = HttpCodeInfo(c.Value);
 
-  if (aant.empty() && aalr.empty() && aahr.empty() && aahttp.empty())
+  if (aaen.empty() && aant.empty() && aalr.empty() && aahr.empty() && aahttp.empty())
   {
     printf("Unknown contant\n");
     exit(1);
+  }
+
+  if (!aaen.empty())
+  {
+    printf("%serrno:\n", f ? "\n" : "");
+    for (auto it = aaen.begin(); it != aaen.end(); ++it)
+      PrintItem(*it, f);
   }
 
   if (!aant.empty())
@@ -84,6 +92,12 @@ void PrintItemCode(const AS_ITEM& ai)
 bool Name2Code2(const char* name, bool fromWin32)
 {
   AS_ITEM ai;
+  if (!Name2ErrnoItem(name, &ai))
+  {
+    PrintItemCode(ai);
+    return true;
+  }
+
   if (!Name2NtStatusItem(name, &ai))
   {
     PrintItemCode(ai);

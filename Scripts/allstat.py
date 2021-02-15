@@ -184,10 +184,11 @@ def print_stat(out, items):
         if name_occurence > 1:
             dup_name += 1
             if item["name"] not in dup_names:
-                dup_names.append(item["name"])
+                if len(dup_names) < 10:
+                    dup_names.append(item["name"])
 
         if occurence > 1:
-            if len(dup) < 5:
+            if len(dup) < 10:
                 if str(item["value"]) not in dup_map:
                     dup.append(item["name"])
             dup_map[str(item["value"])] = 1
@@ -206,7 +207,7 @@ def print_stat(out, items):
 
 def append_status_item(context, name, value, description, source, os):
     for item in context["items"]:
-        if item["name"] == name:
+        if item["name"] == name and item["os"] == os:
             return
 
     item = {"name": name, "value": value, "descr": description, "descr_offs": 0, "os": os, "source": source}
@@ -383,18 +384,26 @@ def generate_hash_tables(context):
     print("Done. Items count:", len(context["items"]))
 
 
-def generate_hpp(out, context, name):
+def generate_hpp(out, context, name, os_suffix=False):
     macro = "__AS_" + name + "__"
     out.write(HPP_HEADER.format(macro, macro))
 
     for item in context["items"]:
+        if os_suffix and item["os"] != "AS_OS_ANY":
+            continue
+        
         line = "#ifdef {}\n#undef {}\n#endif\n".format(item["name"], item["name"])
         out.write(line)
 
     out.write(HPP_ENUM_HEADER.format(name))
     for item in context["items"]:
-        line = HPP_ENTRY.format(item["name"], item["value"])
+        if os_suffix and item["os"] != "AS_OS_ANY":
+            line = HPP_ENTRY.format(item["name"] + item["os"][5:], item["value"])
+        else:
+            line = HPP_ENTRY.format(item["name"], item["value"])
+
         out.write(line)
+
     out.write(HPP_FOOTER.format(macro))
 
 

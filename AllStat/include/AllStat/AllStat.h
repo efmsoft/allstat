@@ -18,6 +18,7 @@ namespace AllStat
   std::string Winerr2Str(uint32_t value);
   std::string Hresult2Str(uint32_t value);
   std::string HttpCode2Str(uint32_t value);
+  std::string Errno2Str(uint32_t value);
 
   // The next block of functions returns information about all defined constants 
   // for the specified code
@@ -26,6 +27,7 @@ namespace AllStat
   ItemArray WinerrInfo(uint32_t value);
   ItemArray HresultInfo(uint32_t value);
   ItemArray HttpCodeInfo(uint32_t value);
+  ItemArray ErrnoInfo(uint32_t value);
 
   // Get code decription string by handle. If AS_COMPRESS_DESCRIPTION is defined, description 
   // strings are stored in compressd block. The function below retrieved description string 
@@ -55,6 +57,7 @@ const char* NtStatus2Name(uint32_t value);
 const char* Winerr2Name(uint32_t value);
 const char* Hresult2Name(uint32_t value);
 const char* HttpCode2Name(uint32_t value);
+const char* Errno2Name(uint32_t value);
 
 // Inverse transformation from constant name to code. This transformation is 
 // unambiguous. 0 if success. Otherwise AS_UNKNOWN value
@@ -62,6 +65,7 @@ uint32_t Name2NtStatusItem(const char* constant_name, PAS_ITEM pitem);
 uint32_t Name2WinerrItem(const char* constant_name, PAS_ITEM pitem);
 uint32_t Name2HresultItem(const char* constant_name, PAS_ITEM pitem);
 uint32_t Name2HttpCodeItem(const char* constant_name, PAS_ITEM pitem);
+uint32_t Name2ErrnoItem(const char* constant_name, PAS_ITEM pitem);
 
 // The default is the current operating system. The status/error code search functions 
 // use this value to filter the returned data. Use AS_OS_ANY to switch off filtering

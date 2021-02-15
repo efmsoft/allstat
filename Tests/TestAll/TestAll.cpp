@@ -1,4 +1,5 @@
 #include <AllStat/AllStat.h>
+#include <AllStat/errno.h>
 #include <AllStat/hresult.h>
 #include <AllStat/http.h>
 #include <AllStat/lresult.h>
@@ -52,6 +53,14 @@ int main()
   VERIFY(item.Code == 200);
   descr = GetDescriptionStr(item.Description);
   VERIFY(descr == "200 OK")
+
+  // ERRNO
+  name = Errno2Name(EBUSY);
+  VERIFY(name == "EBUSY");
+  VERIFY(Name2ErrnoItem(name.c_str(), &item) == 0);
+  VERIFY(item.Code == EBUSY);
+  descr = GetDescriptionStr(item.Description);
+  VERIFY(descr == "Device or resource busy")
 
   printf("Test passed\n");
   return 0;

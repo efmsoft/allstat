@@ -14,6 +14,7 @@ void NTSTATUSGetTables(TABLES& t);
 void HRESULTGetTables(TABLES& t);
 void LRESULTGetTables(TABLES& t);
 void HTTPGetTables(TABLES& t);
+void ERRNOGetTables(TABLES& t);
 
 static std::string Decompress(AS_HANDLE h, const TABLES& t)
 {
@@ -49,10 +50,11 @@ std::string AllStat::GetDescriptionStr(AS_HANDLE h)
   TABLES t;
   switch (h.Generator)
   {
-    case AS_GENERATOR::AS_HRESULT: HRESULTGetTables(t); break;
-    case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
-    case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
-    case AS_GENERATOR::AS_HTTP: HTTPGetTables(t); break;
+  case AS_GENERATOR::AS_ERRNO: ERRNOGetTables(t); break;
+  case AS_GENERATOR::AS_HRESULT: HRESULTGetTables(t); break;
+  case AS_GENERATOR::AS_HTTP: HTTPGetTables(t); break;
+  case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
+  case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
 
     default:
       assert(!"Generator is not supported");
