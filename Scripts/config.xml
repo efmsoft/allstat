@@ -10,7 +10,7 @@
     <source>./data/errno/Solaris/errno.h</source>
     <source>./data/errno/Windows/errno.h</source>
     <cpp>tErrno.cpp</cpp>
-    <h>errno.h</h>
+    <h>errno2.h</h>
   </errno>
   <ntstatus>
     <source>./data/ntstatus.h</source>

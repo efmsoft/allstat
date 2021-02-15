@@ -34,7 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\allstat\AllStat.h" />
-    <ClInclude Include="include\AllStat\errno.h" />
+    <ClInclude Include="include\AllStat\errno2.h" />
     <ClInclude Include="include\allstat\hresult.h" />
     <ClInclude Include="include\allstat\http.h" />
     <ClInclude Include="include\allstat\lresult.h" />

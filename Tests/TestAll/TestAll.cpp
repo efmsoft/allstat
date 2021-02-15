@@ -1,5 +1,5 @@
 #include <AllStat/AllStat.h>
-#include <AllStat/errno.h>
+#include <AllStat/errno2.h>
 #include <AllStat/hresult.h>
 #include <AllStat/http.h>
 #include <AllStat/lresult.h>
