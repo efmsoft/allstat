@@ -255,6 +255,7 @@ std::string AllStat::GetGenerator(const AS_ITEM& item)
     case AS_GENERATOR::AS_HTTP: return "HTTP Code";
     case AS_GENERATOR::AS_LRESULT: return "LRESULT";
     case AS_GENERATOR::AS_NTSTATUS: return "NTSTATUS";
+    case AS_GENERATOR::AS_ERRNO: return "ERRNO";
 
     case AS_HRESULT_FROM_WIN32:
       break;

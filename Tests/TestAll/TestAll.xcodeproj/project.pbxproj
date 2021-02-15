@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		911B184A25DABBC000E9BCB0 /* libAllStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 911B184925DABBC000E9BCB0 /* libAllStat.a */; };
-		91A48B6125D957BF00A91AB6 /* testall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91A48B6025D957BF00A91AB6 /* testall.cpp */; };
+		916E682A25DAF74B00B6D4BC /* TestAll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916E682925DAF74B00B6D4BC /* TestAll.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		911B184925DABBC000E9BCB0 /* libAllStat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAllStat.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		91A48B6025D957BF00A91AB6 /* testall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testall.cpp; sourceTree = "<group>"; };
+		916E682925DAF74B00B6D4BC /* TestAll.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestAll.cpp; sourceTree = "<group>"; };
 		91DD94C025D954C800DC6CCC /* TestAll */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestAll; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,7 @@
 		91DD94B725D954C800DC6CCC = {
 			isa = PBXGroup;
 			children = (
-				91A48B6025D957BF00A91AB6 /* testall.cpp */,
+				916E682925DAF74B00B6D4BC /* TestAll.cpp */,
 				91DD94C125D954C800DC6CCC /* Products */,
 				911B184825DABBC000E9BCB0 /* Frameworks */,
 			);
@@ -122,7 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A48B6125D957BF00A91AB6 /* testall.cpp in Sources */,
+				916E682A25DAF74B00B6D4BC /* TestAll.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

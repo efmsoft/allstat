@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		916E67ED25DAF41D00B6D4BC /* tErrno.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916E67EC25DAF41D00B6D4BC /* tErrno.cpp */; };
+		916E67F025DAF42800B6D4BC /* Errno.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916E67EF25DAF42800B6D4BC /* Errno.cpp */; };
+		916E67F325DAF43400B6D4BC /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 916E67F225DAF43400B6D4BC /* errno.h */; };
 		91DD94A225D9527600DC6CCC /* AllStat.h in Headers */ = {isa = PBXBuildFile; fileRef = 91DD948F25D9527500DC6CCC /* AllStat.h */; };
 		91DD94A325D9527600DC6CCC /* hresult.h in Headers */ = {isa = PBXBuildFile; fileRef = 91DD949025D9527500DC6CCC /* hresult.h */; };
 		91DD94A425D9527600DC6CCC /* http.h in Headers */ = {isa = PBXBuildFile; fileRef = 91DD949125D9527500DC6CCC /* http.h */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		9133F3C125D951F80032F239 /* libAllStat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAllStat.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		916E67EC25DAF41D00B6D4BC /* tErrno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tErrno.cpp; sourceTree = "<group>"; };
+		916E67EF25DAF42800B6D4BC /* Errno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errno.cpp; sourceTree = "<group>"; };
+		916E67F225DAF43400B6D4BC /* errno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errno.h; sourceTree = "<group>"; };
 		91DD948F25D9527500DC6CCC /* AllStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStat.h; sourceTree = "<group>"; };
 		91DD949025D9527500DC6CCC /* hresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hresult.h; sourceTree = "<group>"; };
 		91DD949125D9527500DC6CCC /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http.h; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		91DD948E25D9527500DC6CCC /* AllStat */ = {
 			isa = PBXGroup;
 			children = (
+				916E67F225DAF43400B6D4BC /* errno.h */,
 				91DD948F25D9527500DC6CCC /* AllStat.h */,
 				91DD949025D9527500DC6CCC /* hresult.h */,
 				91DD949125D9527500DC6CCC /* http.h */,
@@ -99,6 +106,7 @@
 		91DD949525D9527600DC6CCC /* source */ = {
 			isa = PBXGroup;
 			children = (
+				916E67EF25DAF42800B6D4BC /* Errno.cpp */,
 				91DD949625D9527600DC6CCC /* AllStat.cpp */,
 				91DD949725D9527600DC6CCC /* AllStatDefs.h */,
 				91DD949825D9527600DC6CCC /* Description.cpp */,
@@ -114,6 +122,7 @@
 		91DD949925D9527600DC6CCC /* generated */ = {
 			isa = PBXGroup;
 			children = (
+				916E67EC25DAF41D00B6D4BC /* tErrno.cpp */,
 				91DD949A25D9527600DC6CCC /* tHresult.cpp */,
 				91DD949B25D9527600DC6CCC /* tHttp.cpp */,
 				91DD949C25D9527600DC6CCC /* tLResult.cpp */,
@@ -132,6 +141,7 @@
 				91DD94A925D9527600DC6CCC /* AllStatDefs.h in Headers */,
 				91DD94A725D9527600DC6CCC /* Types.h in Headers */,
 				91DD94A425D9527600DC6CCC /* http.h in Headers */,
+				916E67F325DAF43400B6D4BC /* errno.h in Headers */,
 				91DD94A325D9527600DC6CCC /* hresult.h in Headers */,
 				91DD94A525D9527600DC6CCC /* lresult.h in Headers */,
 				91DD94A225D9527600DC6CCC /* AllStat.h in Headers */,
@@ -195,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916E67F025DAF42800B6D4BC /* Errno.cpp in Sources */,
 				91DD94AA25D9527600DC6CCC /* Description.cpp in Sources */,
+				916E67ED25DAF41D00B6D4BC /* tErrno.cpp in Sources */,
 				91DD94B225D9527600DC6CCC /* Winerror.cpp in Sources */,
 				91DD94B025D9527600DC6CCC /* Http.cpp in Sources */,
 				91DD94B125D9527600DC6CCC /* NtStatus.cpp in Sources */,
