@@ -10,6 +10,8 @@ Where:\n\
   constant    An interger value in decimal or hex format (value with 0x prefix)\n\
 ";
 
+#pragma warning(disable : 6385)
+
 Config::Option Config::Options[] = 
 {
   {

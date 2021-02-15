@@ -156,7 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="testall.cpp" />
+    <ClCompile Include="TestAll.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\allstat\allstat.vcxproj">
