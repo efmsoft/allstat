@@ -2,6 +2,8 @@
 
 #include <stdint.h>
 
+#pragma pack(push,1) 
+
 typedef enum _AS_OS
 {
   AS_OS_ANY = 0,
@@ -55,6 +57,8 @@ typedef struct _AS_ITEM
   AS_GENERATOR Formatter;
 
 } AS_ITEM, *PAS_ITEM;
+
+#pragma pack(pop) 
 
 #define AS_UNKNOWN          ((uint32_t)-1)
 

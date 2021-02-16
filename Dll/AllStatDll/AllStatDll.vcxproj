@@ -35,6 +35,11 @@
   <ItemGroup>
     <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib\zlib\zlib.vcxproj">
+      <Project>{9819c5c3-2dd0-4dbb-8428-cc49e5ff319e}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -115,11 +120,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;WIN32;_DEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;AS_COMPRESS_DESCRIPTION;WIN32;_DEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include;$(SolutionDir)Modules\zlib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -134,11 +139,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;WIN32;NDEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;AS_COMPRESS_DESCRIPTION;WIN32;NDEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include;$(SolutionDir)Modules\zlib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -153,11 +158,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;_DEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;AS_COMPRESS_DESCRIPTION;_DEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include;$(SolutionDir)Modules\zlib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -172,11 +177,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;NDEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AS_DLL;AS_DLL_IMPL;AS_COMPRESS_DESCRIPTION;NDEBUG;ALLSTATDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include;$(SolutionDir)Modules\zlib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
