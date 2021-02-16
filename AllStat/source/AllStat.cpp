@@ -240,11 +240,23 @@ std::string AllStat::GetNameStr(const AS_ITEM& item)
   return str;
 }
 
+const char* GetNameStrC(const AS_ITEM* item)
+{
+  std::string str = GetNameStr(*item);
+  return strdup(str.c_str());
+}
+
 std::string AllStat::GetValueStr(const AS_ITEM& item)
 {
   char buffer[64];
   sprintf(buffer, "%i (0x%08X)", item.Code, item.Code);
   return buffer;
+}
+
+const char* GetValueStrC(const AS_ITEM* item)
+{
+  std::string str = GetValueStr(*item);
+  return strdup(str.c_str());
 }
 
 std::string AllStat::GetGenerator(const AS_ITEM& item)
@@ -261,4 +273,15 @@ std::string AllStat::GetGenerator(const AS_ITEM& item)
       break;
   }
   return std::string();
+}
+
+const char* GetGeneratorC(const AS_ITEM* item)
+{
+  std::string str = GetGenerator(*item);
+  return strdup(str.c_str());
+}
+
+void AllStatFree(const char* str)
+{
+  free((void*)str);
 }

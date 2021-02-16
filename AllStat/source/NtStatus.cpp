@@ -18,6 +18,12 @@ std::string AllStat::NtStatus2Str(uint32_t ntstatus)
   return FormatName(ntstatus, p, "0x%08X");
 }
 
+const char* NtStatus2StrC(uint32_t value)
+{
+  std::string str = NtStatus2Str(value);
+  return strdup(str.c_str());
+}
+
 ItemArray AllStat::NtStatusInfo(uint32_t ntstatus)
 {
   TABLES t;

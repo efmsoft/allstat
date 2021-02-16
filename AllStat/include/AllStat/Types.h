@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-enum AS_OS
+typedef enum _AS_OS
 {
   AS_OS_ANY = 0,
 
@@ -10,9 +10,9 @@ enum AS_OS
   AS_OS_LINUX = 0x0002,
   AS_OS_MAC = 0x0004,
   AS_OS_SOLARIS = 0x0080,
-};
+} AS_OS;
 
-enum AS_GENERATOR
+typedef enum _AS_GENERATOR
 {
   AS_NTSTATUS = 0x00000001,
   AS_LRESULT = 0x00000002,
@@ -21,7 +21,7 @@ enum AS_GENERATOR
   AS_ERRNO = 0x00000010,
 
   AS_HRESULT_FROM_WIN32 = 0x80000004,
-};
+} AS_GENERATOR;
 
 #define AS_HANDLE_SIGN 'aH'
 
@@ -99,3 +99,29 @@ typedef struct _AS_ITEM
        {0, str}
 #  endif
 #endif
+
+#if defined(_WIN32)
+#define PUBLIC_API_EXPORT __declspec(dllexport)
+#define PUBLIC_API_IMPORT __declspec(dllimport)
+#elif __GNUC__ > 3
+#define PUBLIC_API_EXPORT __attribute__ ((visibility("default")))
+#define PUBLIC_API_IMPORT
+#else
+#define PUBLIC_API_EXPORT
+#define PUBLIC_API_IMPORT
+#endif
+
+#ifdef AS_DLL
+#define AS_API_IMPORT PUBLIC_API_IMPORT
+#define AS_API_EXPORT PUBLIC_API_EXPORT
+#else
+#define AS_API_IMPORT
+#define AS_API_EXPORT
+#endif
+
+#ifdef AS_DLL_IMPL
+#define AS_API AS_API_EXPORT
+#else
+#define AS_API AS_API_IMPORT
+#endif
+

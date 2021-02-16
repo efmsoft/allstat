@@ -15,9 +15,6 @@
     <Filter Include="include\AllStat">
       <UniqueIdentifier>{00c153ed-6d87-4a51-81a4-436a4dd33613}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\zlib">
-      <UniqueIdentifier>{aaeabd25-2c98-4d98-9f4c-cc82dd5ed923}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\NtStatus.cpp">

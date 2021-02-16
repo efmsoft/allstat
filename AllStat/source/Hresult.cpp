@@ -33,6 +33,12 @@ std::string AllStat::Hresult2Str(uint32_t hr)
   return FormatName(hr, p, "0x%08X");
 }
 
+const char* Hresult2StrC(uint32_t value)
+{
+  std::string str = Hresult2Str(value);
+  return strdup(str.c_str());
+}
+
 ItemArray AllStat::HresultInfo(uint32_t hr)
 {
   TABLES t;

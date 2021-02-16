@@ -6,6 +6,8 @@
 
 using namespace AllStat;
 
+#pragma warning(disable : 4996)
+
 #if AS_COMPRESS_DESCRIPTION && !defined(AS_NO_DESCRIPTION)
 
 #include <zlib.h>
@@ -66,4 +68,10 @@ std::string AllStat::GetDescriptionStr(AS_HANDLE h)
   return h.Uncompressed;
 #endif
 #endif
+}
+
+const char* GetDescriptionStrC(AS_HANDLE h)
+{
+  std::string str = GetDescriptionStr(h);
+  return strdup(str.c_str());
 }

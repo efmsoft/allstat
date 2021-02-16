@@ -122,6 +122,12 @@ std::string AllStat::HttpCode2Str(uint32_t code)
   return FormatName(code, p, "%i");
 }
 
+const char* HttpCode2StrC(uint32_t value)
+{
+  std::string str = HttpCode2Str(value);
+  return strdup(str.c_str());
+}
+
 ItemArray AllStat::HttpCodeInfo(uint32_t code)
 {
   TABLES t;

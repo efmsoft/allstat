@@ -18,6 +18,12 @@ std::string AllStat::Errno2Str(uint32_t lr)
   return FormatName(lr, p, "0x%08X");
 }
 
+const char* Errno2StrC(uint32_t value)
+{
+  std::string str = Errno2Str(value);
+  return strdup(str.c_str());
+}
+
 ItemArray AllStat::ErrnoInfo(uint32_t lr)
 {
   TABLES t;

@@ -18,6 +18,12 @@ std::string AllStat::Winerr2Str(uint32_t lr)
   return FormatName(lr, p, "0x%08X");
 }
 
+const char* Winerr2StrC(uint32_t value)
+{
+  std::string str = Winerr2Str(value);
+  return strdup(str.c_str());
+}
+
 ItemArray AllStat::WinerrInfo(uint32_t lr)
 {
   TABLES t;

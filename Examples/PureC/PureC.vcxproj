@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{32e11b03-76cc-498c-b07a-a7ff7998860e}</ProjectGuid>
-    <RootNamespace>testall</RootNamespace>
+    <ProjectGuid>{c60da0f1-e933-4118-a3be-00e2dd0d5a08}</ProjectGuid>
+    <RootNamespace>PureC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>TestAll</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -156,10 +155,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TestAll.cpp" />
+    <ClCompile Include="PureC.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\allstat\allstat.vcxproj">
+    <ProjectReference Include="..\..\AllStat\AllStat.vcxproj">
       <Project>{ae2a8436-6315-4d2d-a7dc-8619c7ec5478}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Lib\zlib\zlib.vcxproj">
