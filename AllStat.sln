@@ -34,6 +34,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{64
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PureC", "Examples\PureC\PureC.vcxproj", "{C60DA0F1-E933-4118-A3BE-00E2DD0D5A08}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python", "Python", "{2C990330-AE21-40DC-9FA3-91BA0297144E}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\Python\example.py = Examples\Python\example.py
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +106,7 @@ Global
 		{9819C5C3-2DD0-4DBB-8428-CC49E5FF319E} = {F36B08A8-9FC1-4200-A072-75C60C6EBF8F}
 		{9ACD9F86-3CAB-4671-A85D-2CF03BF7262E} = {EBA1B316-4E39-4497-9559-FB5D4682F423}
 		{C60DA0F1-E933-4118-A3BE-00E2DD0D5A08} = {64FF2C50-AB80-4983-A764-8018D5DC5865}
+		{2C990330-AE21-40DC-9FA3-91BA0297144E} = {64FF2C50-AB80-4983-A764-8018D5DC5865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {509490D0-38DD-4490-90CE-6377A747C6FF}

@@ -31,6 +31,10 @@ def Errno2Name(value):
     method.argtypes = [ctypes.c_ulong]
     method.restype = ctypes.c_char_p
     s = method(value)
+
+    if s == None:
+        return None
+
     return s.decode()
 
 
@@ -38,8 +42,7 @@ def Name2ErrnoItem(name, asi):
     method = apidll.Name2ErrnoItem
     method.argtypes = [ctypes.c_char_p, ctypes.POINTER(AS_ITEM)]
     method.restype = ctypes.c_ulong
-    r = method(name.encode('utf-8'), ctypes.byref(asi))
-    return r
+    return method(name.encode('utf-8'), ctypes.byref(asi))
 
 
 def string_from_ptr(s):
@@ -56,11 +59,13 @@ def GetDescriptionStrC(h):
     method = apidll.GetDescriptionStrC
     method.argtypes = [AS_HANDLE]
     method.restype = ctypes.c_void_p
+
     s = method(h)
+    if s == None:
+        return None
 
     descr = string_from_ptr(s)
     AllStatFree(s)
-
     return descr
 
 
@@ -81,6 +86,7 @@ def load_dll():
         apidll = ctypes.cdll.LoadLibrary(api_dll_path_name)
     except Exception as e:
         print("unable to load api library. Error: ", str(e))
+        sys.exit(1)
 
 
 def main():
@@ -88,11 +94,16 @@ def main():
 
     code = 2
     name = Errno2Name(code)
+    if name == None:
+        print("Constant is not defined")
+        sys.exit(1)
   
     asi = AS_ITEM()
-    r = Name2ErrnoItem(name, asi)
-    descr = GetDescriptionStrC(asi.Description)
+    if Name2ErrnoItem(name, asi):
+        print("Unable to retrieve info item")
+        sys.exit(1)
 
+    descr = GetDescriptionStrC(asi.Description)
     print("Code: {}, Name: {}, Description: {}".format(code, name, descr))
 
 
