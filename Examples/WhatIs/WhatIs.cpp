@@ -26,13 +26,13 @@ void Code2Name(const Config& c)
   ItemArray arr = AllStatInfo(c.Value);
   if (arr.empty())
   {
-    printf("Unknown contant\n");
+    printf("Unknown constant\n");
     exit(1);
   }
 
   auto gprev = AS_GENERATOR::AS_NONE;
   for (auto it = arr.begin(); it != arr.end(); ++it)
-  {
+  {		
     auto& v = *it;
     if (v.Generator != gprev)
     {
@@ -84,7 +84,7 @@ void Name2Code(const Config& c)
   if (Name2Code2(str.c_str()))
     return;
 
-  printf("Unknown constant\n");
+  printf("Unknown constant name\n");
 }
   
 int main(int argc, char* argv[])

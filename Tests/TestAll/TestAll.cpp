@@ -21,6 +21,9 @@ int main()
   AS_ITEM item;
   std::string name, descr;
 
+  auto os = GetTargetOS();
+  SetTargetOS(AS_OS_ANY);
+  
   // NTSTATUS
   name = NtStatus2Str(STATUS_END_OF_FILE);
   VERIFY(name == "STATUS_END_OF_FILE");
@@ -46,6 +49,8 @@ int main()
   name = Hresult2Str(asHRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER));
   VERIFY(name == "HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)");
 
+  SetTargetOS(os);
+  
   // HTTP
   name = HttpCode2Name(200);
   VERIFY(name == "HTTP_STATUS_OK");

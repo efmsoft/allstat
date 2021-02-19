@@ -79,8 +79,15 @@ def load_dll():
     global apidll
 
     try:
+        print("platform: ", sys.platform)
         dir = os.path.dirname(os.path.abspath(__file__))
-        api_dll_path_name = dir + os.path.sep + 'AllStat.dll'
+        if sys.platform == "windows":
+            api_dll_path_name = dir + os.path.sep + 'AllStat.dll'
+        else:
+            if sys.platform == "darwin":
+                os.environ["DYLD_LIBRARY_PATH"] = dir
+                api_dll_path_name = dir + os.path.sep + 'liballstatd.dylib'
+
         print("current dir: ", os.getcwd())
         print("loading api library: ", api_dll_path_name)
         apidll = ctypes.cdll.LoadLibrary(api_dll_path_name)

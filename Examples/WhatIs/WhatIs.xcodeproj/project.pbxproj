@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		911B184425DAB8E600E9BCB0 /* libAllStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 911B184325DAB8E600E9BCB0 /* libAllStat.a */; };
 		91A48B6525D9585100A91AB6 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91A48B6425D9585100A91AB6 /* Config.cpp */; };
 		91A48B6825D9587500A91AB6 /* WhatIs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91A48B6725D9587500A91AB6 /* WhatIs.cpp */; };
+		91D3C40D25DFFB0A00F97861 /* liballstat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D3C40C25DFFB0A00F97861 /* liballstat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		91A48B6325D9583A00A91AB6 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		91A48B6425D9585100A91AB6 /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
 		91A48B6725D9587500A91AB6 /* WhatIs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WhatIs.cpp; sourceTree = "<group>"; };
-		91A48B6A25D9589700A91AB6 /* Precompile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Precompile.h; sourceTree = "<group>"; };
-		91DD94DA25D954FC00DC6CCC /* WhatIs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WhatIs; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D3C40C25DFFB0A00F97861 /* liballstat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liballstat.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		91DD94DA25D954FC00DC6CCC /* whatis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = whatis; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911B184425DAB8E600E9BCB0 /* libAllStat.a in Frameworks */,
+				91D3C40D25DFFB0A00F97861 /* liballstat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +48,7 @@
 		911B184225DAB8E600E9BCB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91D3C40C25DFFB0A00F97861 /* liballstat.a */,
 				911B184325DAB8E600E9BCB0 /* libAllStat.a */,
 			);
 			name = Frameworks;
@@ -56,7 +57,6 @@
 		91DD94D125D954FC00DC6CCC = {
 			isa = PBXGroup;
 			children = (
-				91A48B6A25D9589700A91AB6 /* Precompile.h */,
 				91A48B6725D9587500A91AB6 /* WhatIs.cpp */,
 				91A48B6425D9585100A91AB6 /* Config.cpp */,
 				91A48B6325D9583A00A91AB6 /* Config.h */,
@@ -68,7 +68,7 @@
 		91DD94DB25D954FC00DC6CCC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91DD94DA25D954FC00DC6CCC /* WhatIs */,
+				91DD94DA25D954FC00DC6CCC /* whatis */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 			);
 			name = WhatIs;
 			productName = WhatIs;
-			productReference = 91DD94DA25D954FC00DC6CCC /* WhatIs */;
+			productReference = 91DD94DA25D954FC00DC6CCC /* whatis */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					$SRCROOT/../../AllStat/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = whatis;
 			};
 			name = Debug;
 		};
@@ -274,7 +274,7 @@
 					$SRCROOT/../../AllStat/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = whatis;
 			};
 			name = Release;
 		};

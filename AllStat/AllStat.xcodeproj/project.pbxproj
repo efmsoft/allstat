@@ -27,10 +27,11 @@
 		91DD94B025D9527600DC6CCC /* Http.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DD949F25D9527600DC6CCC /* Http.cpp */; };
 		91DD94B125D9527600DC6CCC /* NtStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DD94A025D9527600DC6CCC /* NtStatus.cpp */; };
 		91DD94B225D9527600DC6CCC /* Winerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DD94A125D9527600DC6CCC /* Winerror.cpp */; };
+		91DFECD925DFE83D0040F284 /* GrabInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DFECD825DFE83D0040F284 /* GrabInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9133F3C125D951F80032F239 /* libAllStat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAllStat.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9133F3C125D951F80032F239 /* liballstat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liballstat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		916E67EC25DAF41D00B6D4BC /* tErrno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tErrno.cpp; sourceTree = "<group>"; };
 		916E67EF25DAF42800B6D4BC /* Errno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errno.cpp; sourceTree = "<group>"; };
 		916E67F225DAF43400B6D4BC /* errno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errno.h; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		91DD949F25D9527600DC6CCC /* Http.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Http.cpp; sourceTree = "<group>"; };
 		91DD94A025D9527600DC6CCC /* NtStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NtStatus.cpp; sourceTree = "<group>"; };
 		91DD94A125D9527600DC6CCC /* Winerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Winerror.cpp; sourceTree = "<group>"; };
+		91DFECD825DFE83D0040F284 /* GrabInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrabInfo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,7 @@
 		9133F3C225D951F80032F239 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9133F3C125D951F80032F239 /* libAllStat.a */,
+				9133F3C125D951F80032F239 /* liballstat.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +108,7 @@
 		91DD949525D9527600DC6CCC /* source */ = {
 			isa = PBXGroup;
 			children = (
+				91DFECD825DFE83D0040F284 /* GrabInfo.cpp */,
 				916E67EF25DAF42800B6D4BC /* Errno.cpp */,
 				91DD949625D9527600DC6CCC /* AllStat.cpp */,
 				91DD949725D9527600DC6CCC /* AllStatDefs.h */,
@@ -166,7 +169,7 @@
 			);
 			name = AllStat;
 			productName = AllStat;
-			productReference = 9133F3C125D951F80032F239 /* libAllStat.a */;
+			productReference = 9133F3C125D951F80032F239 /* liballstat.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -216,6 +219,7 @@
 				91DD94AF25D9527600DC6CCC /* Hresult.cpp in Sources */,
 				91DD94AD25D9527600DC6CCC /* tLResult.cpp in Sources */,
 				91DD94AE25D9527600DC6CCC /* tNtStatus.cpp in Sources */,
+				91DFECD925DFE83D0040F284 /* GrabInfo.cpp in Sources */,
 				91DD94A825D9527600DC6CCC /* AllStat.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +345,7 @@
 				DEVELOPMENT_TEAM = 5CMYTL7V8N;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = allstat;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -353,7 +357,7 @@
 				DEVELOPMENT_TEAM = 5CMYTL7V8N;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = allstat;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

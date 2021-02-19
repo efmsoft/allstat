@@ -14,6 +14,20 @@
 			remoteGlobalIDString = 9133F3C125D951F80032F239;
 			remoteInfo = AllStat;
 		};
+		9185980525E0016300E988AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9185980125E0016300E988AB /* PureC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 918597F725E0016300E988AB;
+			remoteInfo = PureC;
+		};
+		91A6011C25DFF2DE004AE66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91A6011825DFF2DE004AE66B /* zlib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 91A6011125DFF2DE004AE66B;
+			remoteInfo = zlib;
+		};
 		91DD94CE25D954C900DC6CCC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91DD94CA25D954C800DC6CCC /* TestAll.xcodeproj */;
@@ -21,12 +35,19 @@
 			remoteGlobalIDString = 91DD94C025D954C800DC6CCC;
 			remoteInfo = TestAll;
 		};
-		91DD94E825D954FD00DC6CCC /* PBXContainerItemProxy */ = {
+		91DFECD325DFE7AF0040F284 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 91DD94E425D954FC00DC6CCC /* WhatIs.xcodeproj */;
+			containerPortal = 91DFECCF25DFE7AF0040F284 /* WhatIs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 91DD94DA25D954FC00DC6CCC;
 			remoteInfo = WhatIs;
+		};
+		91DFECF025DFEA770040F284 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91DFECEC25DFEA760040F284 /* AllStatDll.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 91DFECE525DFEA760040F284;
+			remoteInfo = AllStatDll;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,14 +92,21 @@
 		916E682325DAF44E00B6D4BC /* WdsCpMsg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WdsCpMsg.h; sourceTree = "<group>"; };
 		916E682425DAF44E00B6D4BC /* wdsmcerr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wdsmcerr.h; sourceTree = "<group>"; };
 		916E682525DAF44E00B6D4BC /* vsserror.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vsserror.h; sourceTree = "<group>"; };
+		9185980125E0016300E988AB /* PureC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureC.xcodeproj; path = PureC/PureC.xcodeproj; sourceTree = "<group>"; };
+		91A6011825DFF2DE004AE66B /* zlib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = zlib.xcodeproj; path = zlib/zlib.xcodeproj; sourceTree = "<group>"; };
 		91DD94CA25D954C800DC6CCC /* TestAll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TestAll.xcodeproj; path = TestAll/TestAll.xcodeproj; sourceTree = "<group>"; };
-		91DD94E425D954FC00DC6CCC /* WhatIs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhatIs.xcodeproj; path = WhatIs/WhatIs.xcodeproj; sourceTree = "<group>"; };
+		91DFECCE25DFE7480040F284 /* example.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = example.py; sourceTree = "<group>"; };
+		91DFECCF25DFE7AF0040F284 /* WhatIs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhatIs.xcodeproj; path = WhatIs/WhatIs.xcodeproj; sourceTree = "<group>"; };
+		91DFECEC25DFEA760040F284 /* AllStatDll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AllStatDll.xcodeproj; path = AllStatDll/AllStatDll.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		9133F3B125D9514B0032F239 = {
 			isa = PBXGroup;
 			children = (
+				91A6010325DFF2B6004AE66B /* Lib */,
+				91DFECDB25DFE8870040F284 /* Dll */,
+				91DFECCC25DFE6940040F284 /* Examples */,
 				916E67F525DAF44E00B6D4BC /* Scripts */,
 				91DD94B525D9548200DC6CCC /* Tests */,
 				9133F3C825D951F80032F239 /* AllStat.xcodeproj */,
@@ -88,7 +116,7 @@
 		9133F3C925D951F80032F239 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9133F3CD25D951F90032F239 /* libAllStat.a */,
+				9133F3CD25D951F90032F239 /* liballstat.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,10 +239,33 @@
 			path = um;
 			sourceTree = "<group>";
 		};
+		9185980225E0016300E988AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9185980625E0016300E988AB /* PureC */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91A6010325DFF2B6004AE66B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				91A6011825DFF2DE004AE66B /* zlib.xcodeproj */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		91A6011925DFF2DE004AE66B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91A6011D25DFF2DE004AE66B /* libzlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		91DD94B525D9548200DC6CCC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				91DD94E425D954FC00DC6CCC /* WhatIs.xcodeproj */,
 				91DD94CA25D954C800DC6CCC /* TestAll.xcodeproj */,
 			);
 			path = Tests;
@@ -223,15 +274,49 @@
 		91DD94CB25D954C800DC6CCC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91DD94CF25D954C900DC6CCC /* TestAll */,
+				91DD94CF25D954C900DC6CCC /* testall */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		91DD94E525D954FC00DC6CCC /* Products */ = {
+		91DFECCC25DFE6940040F284 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				91DD94E925D954FD00DC6CCC /* WhatIs */,
+				9185980125E0016300E988AB /* PureC.xcodeproj */,
+				91DFECCF25DFE7AF0040F284 /* WhatIs.xcodeproj */,
+				91DFECCD25DFE7480040F284 /* Python */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		91DFECCD25DFE7480040F284 /* Python */ = {
+			isa = PBXGroup;
+			children = (
+				91DFECCE25DFE7480040F284 /* example.py */,
+			);
+			path = Python;
+			sourceTree = "<group>";
+		};
+		91DFECD025DFE7AF0040F284 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91DFECD425DFE7AF0040F284 /* whatis */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91DFECDB25DFE8870040F284 /* Dll */ = {
+			isa = PBXGroup;
+			children = (
+				91DFECEC25DFEA760040F284 /* AllStatDll.xcodeproj */,
+			);
+			path = Dll;
+			sourceTree = "<group>";
+		};
+		91DFECED25DFEA760040F284 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91DFECF125DFEA770040F284 /* liballstatd.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,12 +345,24 @@
 					ProjectRef = 9133F3C825D951F80032F239 /* AllStat.xcodeproj */;
 				},
 				{
+					ProductGroup = 91DFECED25DFEA760040F284 /* Products */;
+					ProjectRef = 91DFECEC25DFEA760040F284 /* AllStatDll.xcodeproj */;
+				},
+				{
+					ProductGroup = 9185980225E0016300E988AB /* Products */;
+					ProjectRef = 9185980125E0016300E988AB /* PureC.xcodeproj */;
+				},
+				{
 					ProductGroup = 91DD94CB25D954C800DC6CCC /* Products */;
 					ProjectRef = 91DD94CA25D954C800DC6CCC /* TestAll.xcodeproj */;
 				},
 				{
-					ProductGroup = 91DD94E525D954FC00DC6CCC /* Products */;
-					ProjectRef = 91DD94E425D954FC00DC6CCC /* WhatIs.xcodeproj */;
+					ProductGroup = 91DFECD025DFE7AF0040F284 /* Products */;
+					ProjectRef = 91DFECCF25DFE7AF0040F284 /* WhatIs.xcodeproj */;
+				},
+				{
+					ProductGroup = 91A6011925DFF2DE004AE66B /* Products */;
+					ProjectRef = 91A6011825DFF2DE004AE66B /* zlib.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -275,25 +372,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9133F3CD25D951F90032F239 /* libAllStat.a */ = {
+		9133F3CD25D951F90032F239 /* liballstat.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libAllStat.a;
+			path = liballstat.a;
 			remoteRef = 9133F3CC25D951F90032F239 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		91DD94CF25D954C900DC6CCC /* TestAll */ = {
+		9185980625E0016300E988AB /* PureC */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = TestAll;
+			path = PureC;
+			remoteRef = 9185980525E0016300E988AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		91A6011D25DFF2DE004AE66B /* libzlib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libzlib.a;
+			remoteRef = 91A6011C25DFF2DE004AE66B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		91DD94CF25D954C900DC6CCC /* testall */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = testall;
 			remoteRef = 91DD94CE25D954C900DC6CCC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		91DD94E925D954FD00DC6CCC /* WhatIs */ = {
+		91DFECD425DFE7AF0040F284 /* whatis */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = WhatIs;
-			remoteRef = 91DD94E825D954FD00DC6CCC /* PBXContainerItemProxy */;
+			path = whatis;
+			remoteRef = 91DFECD325DFE7AF0040F284 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		91DFECF125DFEA770040F284 /* liballstatd.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = liballstatd.dylib;
+			remoteRef = 91DFECF025DFEA770040F284 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

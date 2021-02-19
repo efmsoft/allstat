@@ -273,6 +273,7 @@ std::string AllStat::GetGenerator(const AS_ITEM& item)
     case AS_GENERATOR::AS_NTSTATUS: return "NTSTATUS";
     case AS_GENERATOR::AS_ERRNO: return "ERRNO";
 
+    case AS_NONE:
     case AS_HRESULT_FROM_WIN32:
       break;
   }
