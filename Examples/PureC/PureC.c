@@ -5,17 +5,23 @@
 
 int main()
 {
-  AS_ITEM item;
-  const char* name;
-  const char* descr;
-  
-  name = Errno2Name(ERANGE);
-  Name2ErrnoItem(name, &item);
+  const char* name = Errno2Name(ERANGE);
+  if (name)
+  { 
+    AS_ITEM item;
+    if (!Name2ErrnoItem(name, &item))
+    { 
+      const char* descr = GetDescriptionStrC(item.Description);
 
-  descr = GetDescriptionStrC(item.Description);
+      printf(
+        "Code: %i, Constant: %s, Description: %s\n"
+        , ERANGE
+        , name
+        , descr ? descr : ""
+      );
 
-  printf("Code: %i, Constant: %s, Description: %s\n", ERANGE, name, descr);
-
-  AllStatFree(descr);
+      AllStatFree(descr);
+    }
+  }
   return 0;
 }

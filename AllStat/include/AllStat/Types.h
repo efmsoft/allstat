@@ -6,12 +6,12 @@
 
 typedef enum _AS_OS
 {
-  AS_OS_ANY = 0,
+  AS_OS_ANY,
 
-  AS_OS_WINDOWS = 0x0001,
-  AS_OS_LINUX = 0x0002,
-  AS_OS_MAC = 0x0004,
-  AS_OS_SOLARIS = 0x0080,
+  AS_OS_WINDOWS,
+  AS_OS_LINUX,
+  AS_OS_MAC,
+  AS_OS_SOLARIS,
 } AS_OS;
 
 typedef enum _AS_GENERATOR
@@ -23,6 +23,8 @@ typedef enum _AS_GENERATOR
   AS_ERRNO = 0x00000010,
 
   AS_HRESULT_FROM_WIN32 = 0x80000004,
+
+  AS_NONE = 0xFFFFFFFF
 } AS_GENERATOR;
 
 #define AS_HANDLE_SIGN 'aH'

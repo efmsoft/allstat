@@ -23,6 +23,7 @@
     <ClCompile Include="..\..\AllStat\source\generated\tNtStatus.cpp">
       <Filter>generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />

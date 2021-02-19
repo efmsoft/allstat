@@ -12,11 +12,11 @@ using namespace AllStat;
 
 #include <zlib.h>
 
-void NTSTATUSGetTables(TABLES& t);
-void HRESULTGetTables(TABLES& t);
-void LRESULTGetTables(TABLES& t);
-void HTTPGetTables(TABLES& t);
 void ERRNOGetTables(TABLES& t);
+void HRESULTGetTables(TABLES& t);
+void HTTPGetTables(TABLES& t);
+void LRESULTGetTables(TABLES& t);
+void NTSTATUSGetTables(TABLES& t);
 
 static std::string Decompress(AS_HANDLE h, const TABLES& t)
 {
@@ -34,6 +34,8 @@ static std::string Decompress(AS_HANDLE h, const TABLES& t)
   strm.next_out = &data[0];
   strm.avail_out = t.DescrLen;
   rc = inflate(&strm, 1);
+  inflateEnd(&strm);
+
   if (rc != Z_STREAM_END)
     return std::string();
 

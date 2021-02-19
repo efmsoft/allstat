@@ -248,8 +248,12 @@ const char* GetNameStrC(const AS_ITEM* item)
 
 std::string AllStat::GetValueStr(const AS_ITEM& item)
 {
+  uint32_t code = item.Code;
+  if (item.Generator == AS_LRESULT && item.Formatter == AS_HRESULT_FROM_WIN32)
+    code |= 0x80070000;
+
   char buffer[64];
-  sprintf(buffer, "%i (0x%08X)", item.Code, item.Code);
+  sprintf(buffer, "%u (0x%08X)", code, code);
   return buffer;
 }
 

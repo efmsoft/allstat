@@ -53,6 +53,9 @@
     <ClCompile Include="source\Errno.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\GrabInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AllStatDefs.h">

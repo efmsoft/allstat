@@ -5,7 +5,6 @@
     <ClCompile Include="WhatIs.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Precompile.h" />
     <ClInclude Include="Config.h" />
   </ItemGroup>
 </Project>

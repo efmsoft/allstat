@@ -27,6 +27,7 @@
     <ClCompile Include="..\..\AllStat\source\generated\tHttp.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tLResult.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tNtStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
     <ClCompile Include="..\..\AllStat\source\Hresult.cpp" />
     <ClCompile Include="..\..\AllStat\source\Http.cpp" />
     <ClCompile Include="..\..\AllStat\source\NtStatus.cpp" />
