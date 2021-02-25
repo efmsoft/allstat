@@ -19,6 +19,8 @@ public:
 
 	bool IsActivePage(CPropertyPage* page);
 	void UpdateTargetOS(CPropertyPage* sender);
+	bool ProcessClipboard(int format);
+	bool ProcessClipboard(const char* str);
 
 // Implementation
 protected:

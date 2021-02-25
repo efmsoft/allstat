@@ -110,9 +110,81 @@ BOOL CErrorLookupDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	if (!ProcessClipboard(CF_TEXT))
+		ProcessClipboard(CF_UNICODETEXT);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+bool CErrorLookupDlg::ProcessClipboard(int format)
+{
+	if (!IsClipboardFormatAvailable(format))
+		return false;
+
+	if (!OpenClipboard())
+		return false;
+
+	auto hglb = GetClipboardData(format);
+	if (hglb == nullptr)
+		return false;
+
+	bool f = false;
+	auto lptstr = GlobalLock(hglb);
+	if (lptstr != nullptr)
+	{
+		if (format == CF_TEXT)
+			f = ProcessClipboard((const char*)lptstr);
+		else
+		{
+			CStringA str((const wchar_t*)lptstr);
+			f = ProcessClipboard((const char*)str);
+		}
+		GlobalUnlock(hglb);
+	}
+
+	CloseClipboard();
+	return f;
+}
+
+bool CErrorLookupDlg::ProcessClipboard(const char* s)
+{
+	unsigned code;
+
+	CString text(s);
+	bool f = Code2Name::GetCode(nullptr, text, code);
+	if (f)
+	{
+		OnCodeSearch(s);
+		return true;
+	}
+
+	CStringA str(s), str2(s), str3(s);
+	str2.MakeUpper();
+	str3.MakeLower();
+
+	AS_ITEM ai;
+	do
+	{
+		if (!Name2Item(str, &ai))
+		{
+			OnNameSearch(s);
+			return true;
+		}
+
+		if (!Name2Item(str2, &ai))
+		{
+			OnNameSearch(s);
+			return true;
+		}
+
+		if (!Name2Item(str3, &ai))
+		{
+			OnNameSearch(s);
+			return true;
+		}
+	} while (false);
+
+	return false;
 }
 
 void CErrorLookupDlg::OnSysCommand(UINT nID, LPARAM lParam)
