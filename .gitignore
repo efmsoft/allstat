@@ -9,3 +9,4 @@ Tests/TestAll/TestAll.xcodeproj/xcuserdata/
 AllStat.xcodeproj/project.xcworkspace/xcuserdata/
 AllStat/AllStat.xcodeproj/xcuserdata/
 *.user
+*.pyc

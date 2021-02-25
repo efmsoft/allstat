@@ -88,7 +88,7 @@ def codestr2int(code_str):
     
 def hash_code(code_str):
     code = codestr2int(code_str)
-    str = "{0:08X}".format(code)
+    str = "{0:08X}".format(code & 0xFFFFFFFF)
     return hash_string(str)
 
 
@@ -212,6 +212,19 @@ def append_status_item(context, name, value, description, source, os):
 
     item = {"name": name, "value": value, "descr": description, "descr_offs": 0, "os": os, "source": source}
     context["items"].append(item)
+
+
+def append_item_description(context, name, os, descr):
+    for item in context["items"]:
+        if item["name"] == name and item["os"] == os:
+            descr.strip()
+            if item["descr"]:
+                item["descr"] += " "
+
+            item["descr"] += descr
+            return True
+
+    return False
 
 
 def default_item(context, name, value, description, source, os, replace=False):

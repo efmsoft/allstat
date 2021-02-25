@@ -253,7 +253,7 @@ std::string AllStat::GetValueStr(const AS_ITEM& item)
     code |= 0x80070000;
 
   char buffer[64];
-  sprintf(buffer, "%u (0x%08X)", code, code);
+  sprintf(buffer, "%i (0x%08X)", code, code);
   return buffer;
 }
 
@@ -267,11 +267,13 @@ std::string AllStat::GetGenerator(const AS_ITEM& item)
 {
   switch (item.Generator)
   {
+    case AS_GENERATOR::AS_ERRNO: return "errno";
     case AS_GENERATOR::AS_HRESULT: return "HRESULT";
     case AS_GENERATOR::AS_HTTP: return "HTTP Code";
+    case AS_GENERATOR::AS_KRETURN: return "Kern return";
     case AS_GENERATOR::AS_LRESULT: return "LRESULT";
     case AS_GENERATOR::AS_NTSTATUS: return "NTSTATUS";
-    case AS_GENERATOR::AS_ERRNO: return "ERRNO";
+    case AS_GENERATOR::AS_IPP_STATUS: return "Ipp Status";
 
     case AS_NONE:
     case AS_HRESULT_FROM_WIN32:

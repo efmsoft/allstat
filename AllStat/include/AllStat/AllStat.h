@@ -19,6 +19,8 @@ namespace AllStat
   AS_API std::string HttpCode2Str(uint32_t value);
   AS_API std::string NtStatus2Str(uint32_t value);
   AS_API std::string Winerr2Str(uint32_t value);
+  AS_API std::string Kreturn2Str(uint32_t value);
+  AS_API std::string IppStatus2Str(uint32_t value);
 
   // The next block of functions returns information about all defined constants 
   // for the specified code
@@ -28,6 +30,8 @@ namespace AllStat
   AS_API ItemArray HttpCodeInfo(uint32_t value);
   AS_API ItemArray NtStatusInfo(uint32_t value);
   AS_API ItemArray WinerrInfo(uint32_t value);
+  AS_API ItemArray KreturnInfo(uint32_t value);
+  AS_API ItemArray IppStatusInfo(uint32_t value);
 
   // Grab information from all generators.
   // NOTE: If this function is used, all object files of AllStat will 
@@ -67,6 +71,8 @@ AS_API const char* Hresult2Name(uint32_t value);
 AS_API const char* HttpCode2Name(uint32_t value);
 AS_API const char* NtStatus2Name(uint32_t value);
 AS_API const char* Winerr2Name(uint32_t value);
+AS_API const char* Kreturn2Name(uint32_t value);
+AS_API const char* IppStatus2Name(uint32_t value);
 
 // Inverse transformation from constant name to code. This transformation is 
 // unambiguous. Functions return zero if success. Otherwise AS_UNKNOWN value
@@ -75,6 +81,8 @@ AS_API uint32_t Name2HresultItem(const char* constant_name, PAS_ITEM pitem);
 AS_API uint32_t Name2HttpCodeItem(const char* constant_name, PAS_ITEM pitem);
 AS_API uint32_t Name2NtStatusItem(const char* constant_name, PAS_ITEM pitem);
 AS_API uint32_t Name2WinerrItem(const char* constant_name, PAS_ITEM pitem);
+AS_API uint32_t Name2KreturnItem(const char* constant_name, PAS_ITEM pitem);
+AS_API uint32_t Name2IppStatusItem(const char* constant_name, PAS_ITEM pitem);
 
 // NOTE: If this function is used, all object files of AllStat will 
 // be linked to executable. It contains reference to all generator 
@@ -102,6 +110,8 @@ AS_API const char* Hresult2StrC(uint32_t value);
 AS_API const char* HttpCode2StrC(uint32_t value);
 AS_API const char* NtStatus2StrC(uint32_t value);
 AS_API const char* Winerr2StrC(uint32_t value);
+AS_API const char* Kreturn2StrC(uint32_t value);
+AS_API const char* IppStatus2StrC(uint32_t value);
 
 AS_API void AllStatFree(const char* str);
 

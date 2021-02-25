@@ -56,6 +56,18 @@
     <ClCompile Include="source\GrabInfo.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\generated\tKReturn.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Kreturn.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\generated\tIppStatus.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IppStatus.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AllStatDefs.h">

@@ -15,6 +15,8 @@ using namespace AllStat;
 void ERRNOGetTables(TABLES& t);
 void HRESULTGetTables(TABLES& t);
 void HTTPGetTables(TABLES& t);
+void IPP_STATUSGetTables(TABLES& t);
+void KRETURNGetTables(TABLES& t);
 void LRESULTGetTables(TABLES& t);
 void NTSTATUSGetTables(TABLES& t);
 
@@ -54,11 +56,13 @@ std::string AllStat::GetDescriptionStr(AS_HANDLE h)
   TABLES t;
   switch (h.Generator)
   {
-  case AS_GENERATOR::AS_ERRNO: ERRNOGetTables(t); break;
-  case AS_GENERATOR::AS_HRESULT: HRESULTGetTables(t); break;
-  case AS_GENERATOR::AS_HTTP: HTTPGetTables(t); break;
-  case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
-  case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
+    case AS_GENERATOR::AS_ERRNO: ERRNOGetTables(t); break;
+    case AS_GENERATOR::AS_HRESULT: HRESULTGetTables(t); break;
+    case AS_GENERATOR::AS_HTTP: HTTPGetTables(t); break;
+    case AS_GENERATOR::AS_KRETURN: KRETURNGetTables(t); break;
+    case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
+    case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
+    case AS_GENERATOR::AS_IPP_STATUS: IPP_STATUSGetTables(t); break;
 
     default:
       assert(!"Generator is not supported");

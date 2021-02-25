@@ -16,6 +16,8 @@ AS_API ItemArray AllStat::AllStatInfo(uint32_t value)
     ErrnoInfo
     , HresultInfo
     , HttpCodeInfo
+    , IppStatusInfo
+    , KreturnInfo
     , NtStatusInfo
     , WinerrInfo
   };
@@ -36,6 +38,8 @@ AS_API uint32_t Name2Item(const char* constant_name, PAS_ITEM pitem)
     Name2ErrnoItem
     , Name2HresultItem
     , Name2HttpCodeItem
+    , Name2IppStatusItem
+    , Name2KreturnItem
     , Name2NtStatusItem
     , Name2WinerrItem
   };

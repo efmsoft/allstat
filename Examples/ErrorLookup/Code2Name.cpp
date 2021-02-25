@@ -223,7 +223,7 @@ bool Code2Name::GetCode(CErrorLookupDlg* parent, CString& str, unsigned& code)
   std::string name((LPCSTR)CStringA(value));
 
   std::smatch m;
-  const std::regex base_regex("(\\d+)\\s*\\(0x[0-9a-f]+\\)", std::regex::icase);
+  const std::regex base_regex("([\\+\\-]?\\d+)\\s*\\(0x[0-9a-f]+\\)", std::regex::icase);
   if (std::regex_match(name, m, base_regex))
   {
     name = m[1];
@@ -231,6 +231,17 @@ bool Code2Name::GetCode(CErrorLookupDlg* parent, CString& str, unsigned& code)
   }
 
   int radix = 10;
+  bool neg = false;
+
+  if (value[0] == '-')
+  {
+    value = value.Mid(1);
+    neg = true;
+  }
+
+  if (value[0] == '+')
+    value = value.Mid(1);
+
   int len = value.GetLength();
   if (len > 2)
   {
@@ -252,6 +263,9 @@ bool Code2Name::GetCode(CErrorLookupDlg* parent, CString& str, unsigned& code)
 
   wchar_t* end;
   code = _tcstoul(value, &end, radix);
+  if (neg)
+    code = (unsigned)(-int(code));
+
   if (*end != '\0')
   {
     CStringA str = CW2A(value, CP_UTF8);

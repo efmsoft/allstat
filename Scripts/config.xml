@@ -22,6 +22,16 @@
     <cpp>tHttp.cpp</cpp>
     <h>http.h</h>
   </http>
+  <kreturn>
+    <source>./data/kern_return.h</source>
+    <cpp>tKReturn.cpp</cpp>
+    <h>kernel_return.h</h>
+  </kreturn>
+  <ipp_status>
+    <source>./data/ippdefs.h</source>
+    <cpp>tIppStatus.cpp</cpp>
+    <h>ipp_status.h</h>
+  </ipp_status>
   <lresult>
     <source>./data/mssdk/shared/winerror.h</source>
     <cpp>tLResult.cpp</cpp>
