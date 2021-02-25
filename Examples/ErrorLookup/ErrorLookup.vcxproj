@@ -150,6 +150,8 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>Precompile.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -177,6 +179,8 @@
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>Precompile.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)AllStat/include</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
