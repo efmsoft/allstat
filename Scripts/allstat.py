@@ -3,9 +3,11 @@ import re
 
 START_CODE = \
     "#include \"../AllStatDefs.h\"\n" \
-    "\n"  \
-    "using namespace AllStat;\n"    \
-    "\n"  
+    "\n" \
+    "using namespace AllStat;\n" \
+    "\n" \
+    "#pragma optimize(\"\", off)\n" \
+    "\n" 
 START_CODE2 = \
     "\n"  \
     "static constexpr uint64_t _GENERATOR_ = AS_GENERATOR::AS_{};\n" \

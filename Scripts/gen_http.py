@@ -27,7 +27,7 @@ def read_status_items(config, context, file):
     return context
 
 
-def main():
+def gen_http():
     config = settings.CSettings("http")
     with open(config.Cpp, "w") as out:
         context = allstat.status_item_generation(config, out, read_status_items)
@@ -42,4 +42,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    gen_http()
