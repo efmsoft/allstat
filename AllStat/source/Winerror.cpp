@@ -2,6 +2,7 @@
 #include "AllStatDefs.h"
 
 #include <cassert>
+#include <string.h>
 
 using namespace AllStat;
 

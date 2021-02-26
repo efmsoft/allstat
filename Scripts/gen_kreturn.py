@@ -5,6 +5,8 @@ import allstat
 import settings
 
 def generate_status_items(config, context, file):
+    trans = str.maketrans({"\"": "\\\"", "\\": "\\\\"})
+
     with open(file) as fp:
         lines = fp.readlines()
         line_index = -1
@@ -27,13 +29,15 @@ def generate_status_items(config, context, file):
                 m = re.search(rcms, line)
                 if m:
                     comm = True
-                    allstat.append_item_description(context, name, 'AS_OS_MAC', m.group(1))
+                    descr = m.group(1)
+                    allstat.append_item_description(context, name, 'AS_OS_MAC', descr.translate(trans))
                     continue
 
             if comm and name:
                 m = re.search(rcmc, line)
                 if m:
-                    allstat.append_item_description(context, name, 'AS_OS_MAC', m.group(1))
+                    descr = m.group(1)
+                    allstat.append_item_description(context, name, 'AS_OS_MAC', descr.translate(trans))
                     continue
 
             m = re.search(rexp, line)

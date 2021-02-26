@@ -10,3 +10,5 @@ AllStat.xcodeproj/project.xcworkspace/xcuserdata/
 AllStat/AllStat.xcodeproj/xcuserdata/
 *.user
 *.pyc
+AllStat/build/
+build/
