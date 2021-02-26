@@ -4,6 +4,7 @@
 
 #include <cassert>
 #include <regex>
+#include <string.h>
 
 using namespace AllStat;
 
