@@ -1,3 +1,4 @@
+#define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
 #include "AllStatDefs.h"
 

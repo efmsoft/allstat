@@ -25,11 +25,15 @@
     <ClCompile Include="..\..\AllStat\source\generated\tErrno.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tHresult.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tHttp.cpp" />
+    <ClCompile Include="..\..\AllStat\source\generated\tIppStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\generated\tKReturn.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tLResult.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tNtStatus.cpp" />
     <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
     <ClCompile Include="..\..\AllStat\source\Hresult.cpp" />
     <ClCompile Include="..\..\AllStat\source\Http.cpp" />
+    <ClCompile Include="..\..\AllStat\source\IppStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Kreturn.cpp" />
     <ClCompile Include="..\..\AllStat\source\NtStatus.cpp" />
     <ClCompile Include="..\..\AllStat\source\Winerror.cpp" />
   </ItemGroup>

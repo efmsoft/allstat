@@ -97,14 +97,14 @@ typedef struct _AS_ITEM
 
 #if AS_COMPRESS_DESCRIPTION && !defined(AS_NO_DESCRIPTION)
 #define AS_DESCR_HANDLE(str, offs) \
-  {(uint64_t(AS_HANDLE_SIGN) << 48) + (_GENERATOR_ << 32) + offs}
+  {{(uint64_t(AS_HANDLE_SIGN) << 48) + (_GENERATOR_ << 32) + offs}, 0}
 #else
 #  ifdef AS_NO_DESCRIPTION
 #    define AS_DESCR_HANDLE(str, offs)  \
-       {0, ""}
+       {{0}, ""}
 #  else
 #    define AS_DESCR_HANDLE(str, offs)  \
-       {0, str}
+       {{0}, str}
 #  endif
 #endif
 

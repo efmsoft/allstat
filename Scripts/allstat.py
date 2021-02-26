@@ -6,12 +6,16 @@ START_CODE = \
     "\n" \
     "using namespace AllStat;\n" \
     "\n" \
+    "#ifndef __clang__\n" \
     "#pragma optimize(\"\", off)\n" \
+    "#endif\n" \
     "\n" 
 START_CODE2 = \
-    "\n"  \
+    "\n" \
+    "#if AS_COMPRESS_DESCRIPTION && !defined(AS_NO_DESCRIPTION)\n" \
     "static constexpr uint64_t _GENERATOR_ = AS_GENERATOR::AS_{};\n" \
-    "\n"  \
+    "#endif\n" \
+    "\n" \
     "static const STATUS_ITEM Status[] =\n" \
     "{{\n"
 FORMAT_CODE = "  /*{}*/ {{ (uint32_t){}, \"{}\", AS_DESCR_HANDLE(\"{}\", {}), {}, {} }},\n"

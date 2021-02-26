@@ -24,6 +24,14 @@
       <Filter>generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
+    <ClCompile Include="..\..\AllStat\source\generated\tIppStatus.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AllStat\source\generated\tKReturn.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AllStat\source\IppStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Kreturn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
