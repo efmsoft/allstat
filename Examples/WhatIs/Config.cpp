@@ -1,5 +1,5 @@
 #include <AllStat/AllStat.h>
-#include <Config.h>
+#include "Config.h"
 
 const char* Help = "\
 Convert error code to name of constant / description.\n\
