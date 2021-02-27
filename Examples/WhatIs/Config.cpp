@@ -1,6 +1,7 @@
 #include <AllStat/AllStat.h>
 #include "Config.h"
 
+#include <ctype.h>
 #include <string.h>
 
 const char* Help = "\
@@ -60,7 +61,7 @@ Config::Config(int argc, char* argv[])
   for (int i = 1; i < argc;)
   {
     char* p = argv[i];
-    if (*p == '-' || *p == '/')
+    if ((*p == '-' && !isdigit(p[1])) || *p == '/')
     { 
       ProcessOption(argc, argv, i);
       continue;
