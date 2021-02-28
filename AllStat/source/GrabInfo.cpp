@@ -31,6 +31,12 @@ AS_API ItemArray AllStat::AllStatInfo(uint32_t value)
   return arr;
 }
 
+AS_API PAS_ITEM_ARRAY AllStatInfoC(uint32_t value)
+{
+  ItemArray arr = AllStatInfo(value);
+  return BuildItemArray(arr);
+}
+
 AS_API uint32_t Name2Item(const char* constant_name, PAS_ITEM pitem)
 {
   typedef uint32_t (*GRABBER)(const char* constant_name, PAS_ITEM pitem);

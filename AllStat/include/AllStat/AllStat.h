@@ -114,14 +114,14 @@ AS_API const char* Kreturn2StrC(uint32_t value);
 AS_API const char* IppStatus2StrC(uint32_t value);
 
 AS_API PAS_ITEM_ARRAY ErrnoInfoC(uint32_t value);
-AS_API PAS_ITEM_ARRAY HresultInfo—(uint32_t value);
-AS_API PAS_ITEM_ARRAY HttpCodeInfo—(uint32_t value);
-AS_API PAS_ITEM_ARRAY NtStatusInfo—(uint32_t value);
-AS_API PAS_ITEM_ARRAY WinerrInfo—(uint32_t value);
-AS_API PAS_ITEM_ARRAY KreturnInfo—(uint32_t value);
-AS_API PAS_ITEM_ARRAY IppStatusInfo—(uint32_t value);
+AS_API PAS_ITEM_ARRAY HresultInfoC(uint32_t value);
+AS_API PAS_ITEM_ARRAY HttpCodeInfoC(uint32_t value);
+AS_API PAS_ITEM_ARRAY NtStatusInfoC(uint32_t value);
+AS_API PAS_ITEM_ARRAY WinerrInfoC(uint32_t value);
+AS_API PAS_ITEM_ARRAY KreturnInfoC(uint32_t value);
+AS_API PAS_ITEM_ARRAY IppStatusInfoC(uint32_t value);
 
-AS_API PAS_ITEM_ARRAY AllStatInfo—(uint32_t value);
+AS_API PAS_ITEM_ARRAY AllStatInfoC(uint32_t value);
 
 AS_API void AllStatFree(void* str);
 

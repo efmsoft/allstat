@@ -160,7 +160,7 @@ const char* HttpCode2Name(uint32_t code)
   TABLES t;
   HTTPGetTables(t);
 
-  const STATUS_ITEM* p = EntryByCode(code, t.Items, t.Code2name);
+  const STATUS_ITEM* p = AllStat::EntryByCode(code, t.Items, t.Code2name);
   return p ? p->Name : nullptr;
 }
 

@@ -4,6 +4,7 @@
 
 #include <cassert>
 #include <cstdio>
+#include <stddef.h>
 #include <string.h>
 
 using namespace AllStat;
@@ -289,7 +290,7 @@ const char* GetGeneratorC(const AS_ITEM* item)
   return strdup(str.c_str());
 }
 
-PAS_ITEM_ARRAY BuildItemArray(const ItemArray& arr)
+PAS_ITEM_ARRAY AllStat::BuildItemArray(const ItemArray& arr)
 {
   if (arr.empty())
     return nullptr;
