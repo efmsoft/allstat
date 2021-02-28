@@ -74,6 +74,12 @@ ItemArray AllStat::HresultInfo(uint32_t hr)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY HresultInfoC(uint32_t e)
+{
+  ItemArray arr = HresultInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* Hresult2Name(uint32_t hr)
 {
   TABLES t;

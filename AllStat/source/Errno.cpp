@@ -26,13 +26,13 @@ const char* Errno2StrC(uint32_t value)
   return strdup(str.c_str());
 }
 
-ItemArray AllStat::ErrnoInfo(uint32_t lr)
+ItemArray AllStat::ErrnoInfo(uint32_t e)
 {
   TABLES t;
   ERRNOGetTables(t);
 
   ItemArray aa;
-  auto a = EntryByCodeArray(lr, t.Items, t.Code2name);
+  auto a = EntryByCodeArray(e, t.Items, t.Code2name);
   for (auto it = a.begin(); it != a.end(); ++it)
   {
     auto item = *it;
@@ -43,6 +43,12 @@ ItemArray AllStat::ErrnoInfo(uint32_t lr)
     aa.push_back(ai);
   }
   return aa;
+}
+
+AS_API PAS_ITEM_ARRAY ErrnoInfoC(uint32_t e)
+{
+  ItemArray arr = ErrnoInfo(e);
+  return BuildItemArray(arr);
 }
 
 const char* Errno2Name(uint32_t lr)

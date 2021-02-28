@@ -45,6 +45,12 @@ ItemArray AllStat::WinerrInfo(uint32_t lr)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY WinerrInfoC(uint32_t e)
+{
+  ItemArray arr = WinerrInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* Winerr2Name(uint32_t lr)
 {
   TABLES t;

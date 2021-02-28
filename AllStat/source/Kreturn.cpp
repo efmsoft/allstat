@@ -45,6 +45,12 @@ ItemArray AllStat::KreturnInfo(uint32_t lr)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY KreturnInfoC(uint32_t e)
+{
+  ItemArray arr = KreturnInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* Kreturn2Name(uint32_t lr)
 {
   TABLES t;

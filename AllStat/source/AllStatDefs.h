@@ -42,4 +42,6 @@ namespace AllStat
 
   uint32_t HashStr(const char* p);
   uint32_t HashCode(uint32_t code);
+
+  PAS_ITEM_ARRAY BuildItemArray(const ItemArray& arr);
 }

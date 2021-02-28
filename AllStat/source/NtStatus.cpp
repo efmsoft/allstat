@@ -45,6 +45,12 @@ ItemArray AllStat::NtStatusInfo(uint32_t ntstatus)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY NtStatusInfoC(uint32_t e)
+{
+  ItemArray arr = NtStatusInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* NtStatus2Name(uint32_t ntstatus)
 {
   TABLES t;

@@ -45,6 +45,12 @@ ItemArray AllStat::IppStatusInfo(uint32_t lr)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY IppStatusInfoC(uint32_t e)
+{
+  ItemArray arr = IppStatusInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* IppStatus2Name(uint32_t lr)
 {
   TABLES t;

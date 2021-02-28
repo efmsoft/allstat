@@ -62,6 +62,13 @@ typedef struct _AS_ITEM
 
 } AS_ITEM, *PAS_ITEM;
 
+typedef struct _AS_ITEM_ARRAY
+{
+  uint32_t Count;
+  AS_ITEM Item[1];
+
+} AS_ITEM_ARRAY, *PAS_ITEM_ARRAY;
+
 #pragma pack(pop) 
 
 #define AS_UNKNOWN          ((uint32_t)-1)

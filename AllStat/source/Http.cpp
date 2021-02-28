@@ -149,6 +149,12 @@ ItemArray AllStat::HttpCodeInfo(uint32_t code)
   return aa;
 }
 
+AS_API PAS_ITEM_ARRAY HttpCodeInfoC(uint32_t e)
+{
+  ItemArray arr = HttpCodeInfo(e);
+  return BuildItemArray(arr);
+}
+
 const char* HttpCode2Name(uint32_t code)
 {
   TABLES t;

@@ -289,7 +289,27 @@ const char* GetGeneratorC(const AS_ITEM* item)
   return strdup(str.c_str());
 }
 
-void AllStatFree(const char* str)
+PAS_ITEM_ARRAY BuildItemArray(const ItemArray& arr)
+{
+  if (arr.empty())
+    return nullptr;
+
+  size_t cb = offsetof(AS_ITEM_ARRAY, Item) + arr.size() * sizeof(AS_ITEM);
+  PAS_ITEM_ARRAY p = (PAS_ITEM_ARRAY)malloc(cb);
+  if (p == nullptr)
+    return p;
+
+  int i = 0;
+  p->Count = (uint32_t)arr.size();
+  for (auto it = arr.begin(); it != arr.end(); ++it, ++i)
+  {
+    auto& item = *it;
+    memcpy(&p->Item[i], &item, sizeof(item));
+  }
+  return p;
+}
+
+void AllStatFree(void* str)
 {
   free((void*)str);
 }
