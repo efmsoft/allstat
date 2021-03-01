@@ -123,7 +123,7 @@ AS_API PAS_ITEM_ARRAY IppStatusInfoC(uint32_t value);
 
 AS_API PAS_ITEM_ARRAY AllStatInfoC(uint32_t value);
 
-AS_API void AllStatFree(void* str);
+AS_API void AllStatFree(const void* str);
 
 #ifdef __cplusplus
 }

@@ -310,7 +310,7 @@ PAS_ITEM_ARRAY AllStat::BuildItemArray(const ItemArray& arr)
   return p;
 }
 
-void AllStatFree(void* str)
+void AllStatFree(const void* str)
 {
   free((void*)str);
 }
