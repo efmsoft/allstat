@@ -59,6 +59,7 @@ namespace AllStat
 
   // Name of generator
   AS_API std::string GetGenerator(const AS_ITEM& item);
+  AS_API std::string GetGenerator(AS_GENERATOR id);
 }
 #endif // #ifdef __cplusplus
 
@@ -98,9 +99,18 @@ AS_API uint32_t Name2Item(const char* constant_name, PAS_ITEM pitem);
 AS_API void SetTargetOS(AS_OS os);
 AS_API AS_OS GetTargetOS();
 
+// Enumerate items of specified generator. Use AS_ANY to enumerate
+// items of all generators. The functions return AS_SUCCESS is succeeded
+// NOTE: If one os these functions is used, all object files of AllStat
+// will be linked to executable. It contains reference to all generator 
+// modules
+AS_API uint32_t AllStatGetFirst(AS_GENERATOR id, PAS_ENUM_CONTEXT context, PAS_ITEM item);
+AS_API uint32_t AllStatGetNext(PAS_ENUM_CONTEXT context, PAS_ITEM item);
+
 // C implementation of GetDescriptionStr-GetGenerator. Call AllStatFree to free memory 
 // allocated for returned string
 AS_API const char* GetGeneratorC(const AS_ITEM* item);
+AS_API const char* GetGeneratorByIdC(AS_GENERATOR id);
 AS_API const char* GetNameStrC(const AS_ITEM* item);
 AS_API const char* GetValueStrC(const AS_ITEM* item);
 

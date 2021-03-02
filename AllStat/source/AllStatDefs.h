@@ -44,4 +44,6 @@ namespace AllStat
   uint32_t HashCode(uint32_t code);
 
   PAS_ITEM_ARRAY BuildItemArray(const ItemArray& arr);
+
+  #define ENUM_CONTEXT_SIGN 'asEc'
 }

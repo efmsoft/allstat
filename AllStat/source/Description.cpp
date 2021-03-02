@@ -1,7 +1,7 @@
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
 
-#include "AllStatDefs.h"
+#include "Generator.h"
 
 #include <cassert>
 #include <string.h>
@@ -13,15 +13,6 @@ using namespace AllStat;
 #if AS_COMPRESS_DESCRIPTION && !defined(AS_NO_DESCRIPTION)
 
 #include <zlib.h>
-
-void ERRNOGetTables(TABLES& t);
-void BUGCHECKGetTables(TABLES& t);
-void HRESULTGetTables(TABLES& t);
-void HTTPGetTables(TABLES& t);
-void IPP_STATUSGetTables(TABLES& t);
-void KRETURNGetTables(TABLES& t);
-void LRESULTGetTables(TABLES& t);
-void NTSTATUSGetTables(TABLES& t);
 
 static std::string Decompress(AS_HANDLE h, const TABLES& t)
 {
@@ -56,23 +47,23 @@ std::string AllStat::GetDescriptionStr(AS_HANDLE h)
   return std::string();
 #else
 #if AS_COMPRESS_DESCRIPTION
-  TABLES t;
-  switch (h.Generator)
-  {
-    case AS_GENERATOR::AS_ERRNO: ERRNOGetTables(t); break;
-    case AS_GENERATOR::AS_HRESULT: HRESULTGetTables(t); break;
-    case AS_GENERATOR::AS_HTTP: HTTPGetTables(t); break;
-    case AS_GENERATOR::AS_KRETURN: KRETURNGetTables(t); break;
-    case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
-    case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
-    case AS_GENERATOR::AS_IPP_STATUS: IPP_STATUSGetTables(t); break;
-    case AS_GENERATOR::AS_BUGCHECK: BUGCHECKGetTables(t); break;
 
-    default:
-      assert(!"Generator is not supported");
-      return std::string();
+  const TABLES* t = nullptr;
+  for (Generator* g = Generator::First; g; g = g->Next)
+  { 
+    if (h.Generator == g->ID)
+    { 
+      t = &g->Tables;
+      break;
+    }
   }
-  return Decompress(h, t);
+
+  if (t == nullptr)
+  {
+    assert(!"Generator is not supported");
+    return std::string();
+  }
+  return Decompress(h, *t);
 
 #else
   return h.Uncompressed;

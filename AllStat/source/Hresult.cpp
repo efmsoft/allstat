@@ -1,6 +1,6 @@
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
-#include "AllStatDefs.h"
+#include "Generator.h"
 
 #include <cassert>
 #include <regex>
@@ -10,7 +10,7 @@ using namespace AllStat;
 
 #pragma warning(disable : 4996 26812)
 
-void HRESULTGetTables(TABLES& t);
+DEFINE_GENERATOR(HRESULT, Hresult, "HRESULT");
 
 std::string AllStat::Hresult2Str(uint32_t hr)
 {

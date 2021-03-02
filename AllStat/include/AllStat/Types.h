@@ -27,7 +27,8 @@ typedef enum _AS_GENERATOR
 
   AS_HRESULT_FROM_WIN32 = 0x80000004,
 
-  AS_NONE = 0xFFFFFFFF
+  AS_NONE = 0xFFFFFFFF,
+  AS_ANY = 0xFFFFFFFF,
 } AS_GENERATOR;
 
 #define AS_HANDLE_SIGN 'aH'
@@ -70,8 +71,20 @@ typedef struct _AS_ITEM_ARRAY
 
 } AS_ITEM_ARRAY, *PAS_ITEM_ARRAY;
 
+
+typedef struct _AS_ENUM_CONTEXT
+{
+  uint32_t Signature;
+  uint32_t Pos;
+  const void* Table;
+  AS_GENERATOR Serach;
+  AS_GENERATOR ID;
+
+} AS_ENUM_CONTEXT, *PAS_ENUM_CONTEXT;
+
 #pragma pack(pop) 
 
+#define AS_SUCCESS          0
 #define AS_UNKNOWN          ((uint32_t)-1)
 
 #ifndef AS_UNDEF_VALUES

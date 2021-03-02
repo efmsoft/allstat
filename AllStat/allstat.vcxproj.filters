@@ -15,31 +15,22 @@
     <Filter Include="include\AllStat">
       <UniqueIdentifier>{00c153ed-6d87-4a51-81a4-436a4dd33613}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\generator">
+      <UniqueIdentifier>{4d1d1de6-e97b-437e-91a8-7bdf6ca59758}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\NtStatus.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\AllStat.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\generated\tNtStatus.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\Http.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\generated\tHttp.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
     <ClCompile Include="source\generated\tHresult.cpp">
       <Filter>source\generated</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Winerror.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Hresult.cpp">
-      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\generated\tLResult.cpp">
       <Filter>source\generated</Filter>
@@ -50,28 +41,43 @@
     <ClCompile Include="source\generated\tErrno.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\Errno.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\GrabInfo.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\generated\tKReturn.cpp">
       <Filter>source\generated</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Kreturn.cpp">
-      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\generated\tIppStatus.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\IppStatus.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\generated\tBugCheck.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
+    <ClCompile Include="source\Generator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Winerror.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\NtStatus.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Kreturn.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IppStatus.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Http.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Hresult.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Errno.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
     <ClCompile Include="source\BugCheck.cpp">
+      <Filter>source\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\LinkAll.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="include\AllStat\errno2.h">
       <Filter>include\AllStat</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Generator.h">
+      <Filter>source</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

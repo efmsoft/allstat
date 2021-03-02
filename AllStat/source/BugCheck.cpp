@@ -1,6 +1,6 @@
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
-#include "AllStatDefs.h"
+#include "Generator.h"
 
 #include <cassert>
 #include <string.h>
@@ -9,7 +9,7 @@ using namespace AllStat;
 
 #pragma warning(disable : 4996 26812)
 
-void BUGCHECKGetTables(TABLES& t);
+DEFINE_GENERATOR(BUGCHECK, BugCheck, "BugCheck Code");
 
 std::string AllStat::BugCheck2Str(uint32_t lr)
 {

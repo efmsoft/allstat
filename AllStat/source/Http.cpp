@@ -1,6 +1,6 @@
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
-#include "AllStatDefs.h"
+#include "Generator.h"
 
 #include <cassert>
 #include <string.h>
@@ -113,7 +113,7 @@ static const STATUS_ITEM Http[] =
 };
 #endif
 
-void HTTPGetTables(TABLES& t);
+DEFINE_GENERATOR(HTTP, HttpCode, "HTTP Code");
 
 std::string AllStat::HttpCode2Str(uint32_t code)
 {

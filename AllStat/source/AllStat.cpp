@@ -1,6 +1,6 @@
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <AllStat/AllStat.h>
-#include "AllStatDefs.h"
+#include "Generator.h"
 
 #include <cassert>
 #include <cstdio>
@@ -227,7 +227,7 @@ void AllStat::ItemFromStatusItem(
   item.Formatter = formatter;
 }
 
-std::string AllStat::GetNameStr(const AS_ITEM& item)
+AS_API std::string AllStat::GetNameStr(const AS_ITEM& item)
 {
   std::string str;
   if (item.Formatter == AS_GENERATOR::AS_HRESULT_FROM_WIN32)
@@ -242,13 +242,13 @@ std::string AllStat::GetNameStr(const AS_ITEM& item)
   return str;
 }
 
-const char* GetNameStrC(const AS_ITEM* item)
+AS_API const char* GetNameStrC(const AS_ITEM* item)
 {
   std::string str = GetNameStr(*item);
   return strdup(str.c_str());
 }
 
-std::string AllStat::GetValueStr(const AS_ITEM& item)
+AS_API std::string AllStat::GetValueStr(const AS_ITEM& item)
 {
   uint32_t code = item.Code;
   if (item.Generator == AS_LRESULT && item.Formatter == AS_HRESULT_FROM_WIN32)
@@ -259,33 +259,37 @@ std::string AllStat::GetValueStr(const AS_ITEM& item)
   return buffer;
 }
 
-const char* GetValueStrC(const AS_ITEM* item)
+AS_API const char* GetValueStrC(const AS_ITEM* item)
 {
   std::string str = GetValueStr(*item);
   return strdup(str.c_str());
 }
 
-std::string AllStat::GetGenerator(const AS_ITEM& item)
+AS_API std::string AllStat::GetGenerator(AS_GENERATOR id)
 {
-  switch (item.Generator)
-  {
-    case AS_GENERATOR::AS_ERRNO: return "errno";
-    case AS_GENERATOR::AS_HRESULT: return "HRESULT";
-    case AS_GENERATOR::AS_HTTP: return "HTTP Code";
-    case AS_GENERATOR::AS_KRETURN: return "Kern return";
-    case AS_GENERATOR::AS_LRESULT: return "Win32 error";
-    case AS_GENERATOR::AS_NTSTATUS: return "NTSTATUS";
-    case AS_GENERATOR::AS_IPP_STATUS: return "Intel Ipp Status";
-    case AS_GENERATOR::AS_BUGCHECK: return "BugCheck Code";
+  for (Generator* g = Generator::First; g; g = g->Next)
+    if (g->ID == id)
+      return g->Name;
 
-    case AS_NONE:
-    case AS_HRESULT_FROM_WIN32:
-      break;
-  }
   return std::string();
 }
 
-const char* GetGeneratorC(const AS_ITEM* item)
+AS_API std::string AllStat::GetGenerator(const AS_ITEM& item)
+{
+  for (Generator* g = Generator::First; g; g = g->Next)
+    if (g->ID == item.Generator)
+      return g->Name;
+
+  return std::string();
+}
+
+AS_API const char* GetGeneratorByIdC(AS_GENERATOR id)
+{
+  std::string str = GetGenerator(id);
+  return strdup(str.c_str());
+}
+
+AS_API const char* GetGeneratorC(const AS_ITEM* item)
 {
   std::string str = GetGenerator(*item);
   return strdup(str.c_str());
@@ -311,7 +315,7 @@ PAS_ITEM_ARRAY AllStat::BuildItemArray(const ItemArray& arr)
   return p;
 }
 
-void AllStatFree(const void* str)
+AS_API void AllStatFree(const void* str)
 {
   free((void*)str);
 }
