@@ -68,6 +68,12 @@
     <ClCompile Include="source\IppStatus.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\generated\tBugCheck.cpp">
+      <Filter>source\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BugCheck.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AllStatDefs.h">

@@ -1,4 +1,5 @@
 from gen_errno import gen_errno
+from gen_bugcheck import gen_bugcheck
 from gen_hresult import gen_hresult
 from gen_http import gen_http
 from gen_ipp_status import gen_ipp_status
@@ -9,6 +10,7 @@ from gen_ntstatus import gen_ntstatus
 
 def main():
     gen_errno()
+    gen_bugcheck()
     gen_hresult()
     gen_http()
     gen_ipp_status()

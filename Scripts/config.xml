@@ -32,6 +32,11 @@
     <cpp>tIppStatus.cpp</cpp>
     <h>ipp_status.h</h>
   </ipp_status>
+  <bugcheck>
+    <source>./data/mssdk/shared/bugcodes.h</source>
+    <cpp>tBugCheck.cpp</cpp>
+    <h>bug_check_codes.h</h>
+  </bugcheck>
   <lresult>
     <source>./data/mssdk/shared/winerror.h</source>
     <cpp>tLResult.cpp</cpp>
@@ -71,5 +76,11 @@
       <item key="NtDsBMsg.h" value="Directory Service Backup/Restore"/>
       <item key="functiondiscoveryerror.h" value="Web Services Function Discovery"/>
     </hpp2source>
+    <bugcheckdescr>
+      <item key="APC_INDEX_MISMATCH" value="There has been a mismatch in the asynchronous procedure calls (APC) state index"/>
+      <item key="DEVICE_QUEUE_NOT_BUSY" value=""/>
+      <item key="INVALID_DATA_ACCESS_TRAP" value="It indicates an incorrect data access trap."/>
+      <item key="INVALID_PROCESS_ATTACH_ATTEMPT" value="This generally indicates that the thread was attached to a process in a situation where that is not allowed. For example, this bug check could occur if KeAttachProcess was called when the thread was already attached to a process (which is illegal), or if the thread returned from certain function calls in an attached state (which is invalid)."/>
+    </bugcheckdescr>
   </map>
 </config>

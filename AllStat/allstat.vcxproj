@@ -20,8 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AllStat.cpp" />
+    <ClCompile Include="source\BugCheck.cpp" />
     <ClCompile Include="source\Description.cpp" />
     <ClCompile Include="source\Errno.cpp" />
+    <ClCompile Include="source\generated\tBugCheck.cpp" />
     <ClCompile Include="source\generated\tErrno.cpp" />
     <ClCompile Include="source\generated\tHresult.cpp" />
     <ClCompile Include="source\generated\tHttp.cpp" />

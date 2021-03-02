@@ -273,9 +273,10 @@ std::string AllStat::GetGenerator(const AS_ITEM& item)
     case AS_GENERATOR::AS_HRESULT: return "HRESULT";
     case AS_GENERATOR::AS_HTTP: return "HTTP Code";
     case AS_GENERATOR::AS_KRETURN: return "Kern return";
-    case AS_GENERATOR::AS_LRESULT: return "LRESULT";
+    case AS_GENERATOR::AS_LRESULT: return "Win32 error";
     case AS_GENERATOR::AS_NTSTATUS: return "NTSTATUS";
-    case AS_GENERATOR::AS_IPP_STATUS: return "Ipp Status";
+    case AS_GENERATOR::AS_IPP_STATUS: return "Intel Ipp Status";
+    case AS_GENERATOR::AS_BUGCHECK: return "BugCheck Code";
 
     case AS_NONE:
     case AS_HRESULT_FROM_WIN32:

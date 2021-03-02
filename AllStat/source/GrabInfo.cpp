@@ -15,6 +15,7 @@ AS_API ItemArray AllStat::AllStatInfo(uint32_t value)
   static GRABBER functions[] =
   {
     ErrnoInfo
+    , BugCheckInfo
     , HresultInfo
     , HttpCodeInfo
     , IppStatusInfo
@@ -43,6 +44,7 @@ AS_API uint32_t Name2Item(const char* constant_name, PAS_ITEM pitem)
   static GRABBER functions[] =
   {
     Name2ErrnoItem
+    , Name2BugCheckItem
     , Name2HresultItem
     , Name2HttpCodeItem
     , Name2IppStatusItem

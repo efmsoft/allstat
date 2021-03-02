@@ -15,6 +15,7 @@ using namespace AllStat;
 #include <zlib.h>
 
 void ERRNOGetTables(TABLES& t);
+void BUGCHECKGetTables(TABLES& t);
 void HRESULTGetTables(TABLES& t);
 void HTTPGetTables(TABLES& t);
 void IPP_STATUSGetTables(TABLES& t);
@@ -65,6 +66,7 @@ std::string AllStat::GetDescriptionStr(AS_HANDLE h)
     case AS_GENERATOR::AS_LRESULT: LRESULTGetTables(t); break;
     case AS_GENERATOR::AS_NTSTATUS: NTSTATUSGetTables(t); break;
     case AS_GENERATOR::AS_IPP_STATUS: IPP_STATUSGetTables(t); break;
+    case AS_GENERATOR::AS_BUGCHECK: BUGCHECKGetTables(t); break;
 
     default:
       assert(!"Generator is not supported");
