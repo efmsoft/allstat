@@ -33,7 +33,7 @@
     <h>ipp_status.h</h>
   </ipp_status>
   <bugcheck>
-    <source>./data/mssdk/shared/bugcodes.h</source>
+    <source>./data/bugcodes/**/*.h</source>
     <cpp>tBugCheck.cpp</cpp>
     <h>bug_check_codes.h</h>
   </bugcheck>
