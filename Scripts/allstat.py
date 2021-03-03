@@ -274,7 +274,7 @@ def default_item(context, name, value, description, source, os, replace=False):
         return
 
     # Push to end of array
-    append_status_item(context, name, value, description)
+    append_status_item(context, name, value, description, source, os)
 
 
 def generate_var_name(s, src_map):
