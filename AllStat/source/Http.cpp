@@ -1,13 +1,4 @@
-#define _CRT_NONSTDC_NO_DEPRECATE
-#include <AllStat/AllStat.h>
 #include "Generator.h"
-
-#include <cassert>
-#include <string.h>
-
-using namespace AllStat;
-
-#pragma warning(disable : 4996 26812)
 
 // DO NOT REMOVE!!! Used by generator script to produce tHtpp.cpp
 #if 0
@@ -113,72 +104,5 @@ static const STATUS_ITEM Http[] =
 };
 #endif
 
-DEFINE_GENERATOR(HTTP, HttpCode, "HTTP Code");
-
-std::string AllStat::HttpCode2Str(uint32_t code)
-{
-  TABLES t;
-  HTTPGetTables(t);
-
-  const STATUS_ITEM* p = EntryByCode(code, t.Items, t.Code2name);
-  return FormatName(code, p, "%i");
-}
-
-const char* HttpCode2StrC(uint32_t value)
-{
-  std::string str = HttpCode2Str(value);
-  return strdup(str.c_str());
-}
-
-ItemArray AllStat::HttpCodeInfo(uint32_t code)
-{
-  TABLES t;
-  HTTPGetTables(t);
-
-  ItemArray aa;
-  auto a = EntryByCodeArray(code, t.Items, t.Code2name);
-  for (auto it = a.begin(); it != a.end(); ++it)
-  {
-    auto item = *it;
-
-    AS_ITEM ai;
-    ItemFromStatusItem(*item, ai, AS_GENERATOR::AS_HTTP, AS_GENERATOR::AS_HTTP);
-
-    aa.push_back(ai);
-  }
-  return aa;
-}
-
-AS_API PAS_ITEM_ARRAY HttpCodeInfoC(uint32_t e)
-{
-  ItemArray arr = HttpCodeInfo(e);
-  return BuildItemArray(arr);
-}
-
-const char* HttpCode2Name(uint32_t code)
-{
-  TABLES t;
-  HTTPGetTables(t);
-
-  const STATUS_ITEM* p = AllStat::EntryByCode(code, t.Items, t.Code2name);
-  return p ? p->Name : nullptr;
-}
-
-uint32_t Name2HttpCodeItem(const char* constant_name, PAS_ITEM pitem)
-{
-  if (pitem == nullptr)
-  {
-    assert(pitem);
-    return AS_UNKNOWN;
-  }
-
-  TABLES t;
-  HTTPGetTables(t);
-
-  auto e = EntryByName(constant_name, t.Items, t.Name2code);
-  if (e == nullptr)
-    return AS_UNKNOWN;
-
-  ItemFromStatusItem(*e, *pitem, AS_GENERATOR::AS_HTTP, AS_GENERATOR::AS_HTTP);
-  return 0;
-}
+DEFINE_GENERATOR(HTTP, HttpCode, "HTTP Code", "%i");
+CREATE_GENERATOR(HttpCode);

@@ -1,23 +1,39 @@
-#define _CRT_NONSTDC_NO_DEPRECATE
-#include <AllStat/AllStat.h>
 #include "Generator.h"
-
-#include <cassert>
 #include <regex>
-#include <string.h>
 
-using namespace AllStat;
-
-#pragma warning(disable : 4996 26812)
-
-DEFINE_GENERATOR(HRESULT, Hresult, "HRESULT");
-
-std::string AllStat::Hresult2Str(uint32_t hr)
+struct HresultGenerator : public Generator
 {
-  TABLES t;
-  HRESULTGetTables(t);
+  HresultGenerator(
+    const char* name
+    , const char* format
+    , AS_GENERATOR id
+    , FGetTables gettables
+    , FGetInfo getinfo
+    , FGetConst getconst
+  );
 
-  const STATUS_ITEM* p = EntryByCode(hr, t.Items, t.Code2name);
+  std::string ToStr(uint32_t e) override;
+  ItemArray ToInfo(uint32_t e) override;
+};
+
+DEFINE_GENERATOR_EX(HresultGenerator, HRESULT, Hresult, "HRESULT", "0x%08X");
+CREATE_GENERATOR(Hresult);
+
+HresultGenerator::HresultGenerator(
+  const char* name
+  , const char* format
+  , AS_GENERATOR id
+  , FGetTables gettables
+  , FGetInfo getinfo
+  , FGetConst getconst
+)
+  : Generator(name, format, id, gettables, getinfo, getconst)
+{
+}
+
+std::string HresultGenerator::ToStr(uint32_t hr)
+{
+  const STATUS_ITEM* p = EntryByCode(hr, Tables.Items, Tables.Code2name);
   if (p == nullptr)
   {
     if ((hr & 0xFFFF0000) == 0x80070000)
@@ -32,32 +48,12 @@ std::string AllStat::Hresult2Str(uint32_t hr)
       }
     }
   }
-  return FormatName(hr, p, "0x%08X");
+  return FormatName(hr, p, Format);
 }
 
-const char* Hresult2StrC(uint32_t value)
+ItemArray HresultGenerator::ToInfo(uint32_t hr)
 {
-  std::string str = Hresult2Str(value);
-  return strdup(str.c_str());
-}
-
-ItemArray AllStat::HresultInfo(uint32_t hr)
-{
-  TABLES t;
-  HRESULTGetTables(t);
-
-  ItemArray aa;
-  auto a = EntryByCodeArray(hr, t.Items, t.Code2name);
-  for (auto it = a.begin(); it != a.end(); ++it)
-  {
-    auto item = *it;
-
-    AS_ITEM ai;
-    ItemFromStatusItem(*item, ai, AS_GENERATOR::AS_HRESULT, AS_GENERATOR::AS_HRESULT);
-
-    aa.push_back(ai);
-  }
-
+  ItemArray aa = Generator::ToInfo(hr);
   if ((hr & 0xFFFF0000) == 0x80070000)
   {
     ItemArray a2 = WinerrInfo(hr & 0xFFFF);
@@ -72,38 +68,4 @@ ItemArray AllStat::HresultInfo(uint32_t hr)
     }
   }
   return aa;
-}
-
-AS_API PAS_ITEM_ARRAY HresultInfoC(uint32_t e)
-{
-  ItemArray arr = HresultInfo(e);
-  return BuildItemArray(arr);
-}
-
-const char* Hresult2Name(uint32_t hr)
-{
-  TABLES t;
-  HRESULTGetTables(t);
-
-  const STATUS_ITEM* p = EntryByCode(hr, t.Items, t.Code2name);
-  return p ? p->Name : nullptr;
-}
-
-uint32_t Name2HresultItem(const char* constant_name, PAS_ITEM pitem)
-{
-  if (pitem == nullptr)
-  {
-    assert(pitem);
-    return AS_UNKNOWN;
-  }
-
-  TABLES t;
-  HRESULTGetTables(t);
-
-  auto e = EntryByName(constant_name, t.Items, t.Name2code);
-  if (e == nullptr)
-    return AS_UNKNOWN;
-
-  ItemFromStatusItem(*e, *pitem, AS_GENERATOR::AS_HRESULT, AS_GENERATOR::AS_HRESULT);
-  return 0;
 }
