@@ -23,7 +23,7 @@
     <h>http.h</h>
   </http>
   <kreturn>
-    <source>./data/kern_return.h</source>
+    <source>./data/kreturn/**/*.h</source>
     <cpp>tKReturn.cpp</cpp>
     <h>kernel_return.h</h>
   </kreturn>
