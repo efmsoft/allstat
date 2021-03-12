@@ -30,7 +30,7 @@ namespace AllStat
     DEFINE_GENERATOR_EX(Generator, type, nick, name, format)
 
   #define CREATE_GENERATOR(nick) \
-    AS_API std::string AllStat::##nick##2Str(uint32_t e) \
+    AS_API std::string AllStat::nick##2Str(uint32_t e) \
     { \
       return GeneratorInstance.ToStr(e); \
     } \
@@ -39,7 +39,7 @@ namespace AllStat
       std::string str = nick##2Str(e); \
       return strdup(str.c_str()); \
     } \
-    AS_API ItemArray AllStat::##nick##Info(uint32_t e) \
+    AS_API ItemArray AllStat::nick##Info(uint32_t e) \
     { \
       return GeneratorInstance.ToInfo(e); \
     } \

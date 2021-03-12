@@ -45,5 +45,5 @@ namespace AllStat
 
   PAS_ITEM_ARRAY BuildItemArray(const ItemArray& arr);
 
-  #define ENUM_CONTEXT_SIGN 'asEc'
+  #define ENUM_CONTEXT_SIGN  (*(uint32_t*)"asEc")
 }
