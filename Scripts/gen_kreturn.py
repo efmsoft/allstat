@@ -190,6 +190,34 @@ def process_usb(config, context, file):
     return context
 
 
+def process_ioreturn(config, context, file):
+
+    with open(file) as fp:
+        lines = fp.readlines()
+        line_index = -1
+
+        rexp = r'#define\s*(kIO\S+)\s+iokit_common_err\((0x[\da-fA-F]+)\)\s*//\s+(.*)$'
+        src = 'IOReturn.h'
+
+        name = ""
+        for line in lines:
+            line_index += 1
+                
+            m = re.search(rexp, line)
+            if not m:
+                continue
+
+            name = m.group(1)
+            value = allstat.codestr2int(m.group(2)) + 0xE0000000
+            value = "0x{0:08X}".format(value & 0xFFFFFFFF)            
+            description = m.group(3).rstrip()
+
+            allstat.append_status_item(context, name, value, description, src, "AS_OS_MAC")
+
+    print("Processed {}. {} items added".format(file, len(context["items"])))
+    return context
+
+
 def add_fw_items(context):
     src = "IOKit/firewire/IOFireWireFamilyCommon.h"
     allstat.default_item(context, "kIOConfigNoEntry", "0xE0008001", "Can't find requested entry in ROM", src, "AS_OS_MAC", True)
@@ -239,6 +267,8 @@ def generate_status_items(config, context, file):
         return process_os_return(config, context, file, r'#define\s*(kOS\S+)\s+libkern_kext_err\((0x[\da-fA-F]+)\)\s*$', 0xDC008000)
     elif incfile == "USB.h":
         return process_usb(config, context, file)
+    elif incfile == "IOReturn.h":
+        return process_ioreturn(config, context, file)
 
     return context
 

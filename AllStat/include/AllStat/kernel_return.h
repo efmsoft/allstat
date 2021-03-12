@@ -426,6 +426,165 @@ AS_NAMESPACE_BEGIN()
 #ifdef kOSKextReturnKCLoadFailureAuxKC
 #undef kOSKextReturnKCLoadFailureAuxKC
 #endif
+#ifdef kIOReturnInvalid
+#undef kIOReturnInvalid
+#endif
+#ifdef kIOReturnError
+#undef kIOReturnError
+#endif
+#ifdef kIOReturnNoMemory
+#undef kIOReturnNoMemory
+#endif
+#ifdef kIOReturnNoResources
+#undef kIOReturnNoResources
+#endif
+#ifdef kIOReturnIPCError
+#undef kIOReturnIPCError
+#endif
+#ifdef kIOReturnNoDevice
+#undef kIOReturnNoDevice
+#endif
+#ifdef kIOReturnNotPrivileged
+#undef kIOReturnNotPrivileged
+#endif
+#ifdef kIOReturnBadArgument
+#undef kIOReturnBadArgument
+#endif
+#ifdef kIOReturnLockedRead
+#undef kIOReturnLockedRead
+#endif
+#ifdef kIOReturnLockedWrite
+#undef kIOReturnLockedWrite
+#endif
+#ifdef kIOReturnExclusiveAccess
+#undef kIOReturnExclusiveAccess
+#endif
+#ifdef kIOReturnBadMessageID
+#undef kIOReturnBadMessageID
+#endif
+#ifdef kIOReturnUnsupported
+#undef kIOReturnUnsupported
+#endif
+#ifdef kIOReturnVMError
+#undef kIOReturnVMError
+#endif
+#ifdef kIOReturnInternalError
+#undef kIOReturnInternalError
+#endif
+#ifdef kIOReturnIOError
+#undef kIOReturnIOError
+#endif
+#ifdef kIOReturn???Error
+#undef kIOReturn???Error
+#endif
+#ifdef kIOReturnCannotLock
+#undef kIOReturnCannotLock
+#endif
+#ifdef kIOReturnNotOpen
+#undef kIOReturnNotOpen
+#endif
+#ifdef kIOReturnNotReadable
+#undef kIOReturnNotReadable
+#endif
+#ifdef kIOReturnNotWritable
+#undef kIOReturnNotWritable
+#endif
+#ifdef kIOReturnNotAligned
+#undef kIOReturnNotAligned
+#endif
+#ifdef kIOReturnBadMedia
+#undef kIOReturnBadMedia
+#endif
+#ifdef kIOReturnStillOpen
+#undef kIOReturnStillOpen
+#endif
+#ifdef kIOReturnRLDError
+#undef kIOReturnRLDError
+#endif
+#ifdef kIOReturnDMAError
+#undef kIOReturnDMAError
+#endif
+#ifdef kIOReturnBusy
+#undef kIOReturnBusy
+#endif
+#ifdef kIOReturnTimeout
+#undef kIOReturnTimeout
+#endif
+#ifdef kIOReturnOffline
+#undef kIOReturnOffline
+#endif
+#ifdef kIOReturnNotReady
+#undef kIOReturnNotReady
+#endif
+#ifdef kIOReturnNotAttached
+#undef kIOReturnNotAttached
+#endif
+#ifdef kIOReturnNoChannels
+#undef kIOReturnNoChannels
+#endif
+#ifdef kIOReturnNoSpace
+#undef kIOReturnNoSpace
+#endif
+#ifdef kIOReturnPortExists
+#undef kIOReturnPortExists
+#endif
+#ifdef kIOReturnCannotWire
+#undef kIOReturnCannotWire
+#endif
+#ifdef kIOReturnNoInterrupt
+#undef kIOReturnNoInterrupt
+#endif
+#ifdef kIOReturnNoFrames
+#undef kIOReturnNoFrames
+#endif
+#ifdef kIOReturnMessageTooLarge
+#undef kIOReturnMessageTooLarge
+#endif
+#ifdef kIOReturnNotPermitted
+#undef kIOReturnNotPermitted
+#endif
+#ifdef kIOReturnNoPower
+#undef kIOReturnNoPower
+#endif
+#ifdef kIOReturnNoMedia
+#undef kIOReturnNoMedia
+#endif
+#ifdef kIOReturnUnformattedMedia
+#undef kIOReturnUnformattedMedia
+#endif
+#ifdef kIOReturnUnsupportedMode
+#undef kIOReturnUnsupportedMode
+#endif
+#ifdef kIOReturnUnderrun
+#undef kIOReturnUnderrun
+#endif
+#ifdef kIOReturnOverrun
+#undef kIOReturnOverrun
+#endif
+#ifdef kIOReturnDeviceError
+#undef kIOReturnDeviceError
+#endif
+#ifdef kIOReturnNoCompletion
+#undef kIOReturnNoCompletion
+#endif
+#ifdef kIOReturnAborted
+#undef kIOReturnAborted
+#endif
+#ifdef kIOReturnNoBandwidth
+#undef kIOReturnNoBandwidth
+#endif
+#ifdef kIOReturnNotResponding
+#undef kIOReturnNotResponding
+#endif
+#ifdef kIOReturnIsoTooOld
+#undef kIOReturnIsoTooOld
+#endif
+#ifdef kIOReturnIsoTooNew
+#undef kIOReturnIsoTooNew
+#endif
+#ifdef kIOReturnNotFound
+#undef kIOReturnNotFound
+#endif
 #ifdef kIOUSBCRCErr
 #undef kIOUSBCRCErr
 #endif
@@ -768,6 +927,59 @@ enum AS_DEFINE_NAME(KERN_RETURN)
   AS_DEFINE_NAME(kOSKextReturnKCLoadFailure) = 0xDC00801C,
   AS_DEFINE_NAME(kOSKextReturnKCLoadFailureSystemKC) = 0xDC00801D,
   AS_DEFINE_NAME(kOSKextReturnKCLoadFailureAuxKC) = 0xDC00801E,
+  AS_DEFINE_NAME(kIOReturnInvalid) = 0xE0000001,
+  AS_DEFINE_NAME(kIOReturnError) = 0xE00002BC,
+  AS_DEFINE_NAME(kIOReturnNoMemory) = 0xE00002BD,
+  AS_DEFINE_NAME(kIOReturnNoResources) = 0xE00002BE,
+  AS_DEFINE_NAME(kIOReturnIPCError) = 0xE00002BF,
+  AS_DEFINE_NAME(kIOReturnNoDevice) = 0xE00002C0,
+  AS_DEFINE_NAME(kIOReturnNotPrivileged) = 0xE00002C1,
+  AS_DEFINE_NAME(kIOReturnBadArgument) = 0xE00002C2,
+  AS_DEFINE_NAME(kIOReturnLockedRead) = 0xE00002C3,
+  AS_DEFINE_NAME(kIOReturnLockedWrite) = 0xE00002C4,
+  AS_DEFINE_NAME(kIOReturnExclusiveAccess) = 0xE00002C5,
+  AS_DEFINE_NAME(kIOReturnBadMessageID) = 0xE00002C6,
+  AS_DEFINE_NAME(kIOReturnUnsupported) = 0xE00002C7,
+  AS_DEFINE_NAME(kIOReturnVMError) = 0xE00002C8,
+  AS_DEFINE_NAME(kIOReturnInternalError) = 0xE00002C9,
+  AS_DEFINE_NAME(kIOReturnIOError) = 0xE00002CA,
+  AS_DEFINE_NAME(kIOReturn???Error) = 0xE00002CB,
+  AS_DEFINE_NAME(kIOReturnCannotLock) = 0xE00002CC,
+  AS_DEFINE_NAME(kIOReturnNotOpen) = 0xE00002CD,
+  AS_DEFINE_NAME(kIOReturnNotReadable) = 0xE00002CE,
+  AS_DEFINE_NAME(kIOReturnNotWritable) = 0xE00002CF,
+  AS_DEFINE_NAME(kIOReturnNotAligned) = 0xE00002D0,
+  AS_DEFINE_NAME(kIOReturnBadMedia) = 0xE00002D1,
+  AS_DEFINE_NAME(kIOReturnStillOpen) = 0xE00002D2,
+  AS_DEFINE_NAME(kIOReturnRLDError) = 0xE00002D3,
+  AS_DEFINE_NAME(kIOReturnDMAError) = 0xE00002D4,
+  AS_DEFINE_NAME(kIOReturnBusy) = 0xE00002D5,
+  AS_DEFINE_NAME(kIOReturnTimeout) = 0xE00002D6,
+  AS_DEFINE_NAME(kIOReturnOffline) = 0xE00002D7,
+  AS_DEFINE_NAME(kIOReturnNotReady) = 0xE00002D8,
+  AS_DEFINE_NAME(kIOReturnNotAttached) = 0xE00002D9,
+  AS_DEFINE_NAME(kIOReturnNoChannels) = 0xE00002DA,
+  AS_DEFINE_NAME(kIOReturnNoSpace) = 0xE00002DB,
+  AS_DEFINE_NAME(kIOReturnPortExists) = 0xE00002DD,
+  AS_DEFINE_NAME(kIOReturnCannotWire) = 0xE00002DE,
+  AS_DEFINE_NAME(kIOReturnNoInterrupt) = 0xE00002DF,
+  AS_DEFINE_NAME(kIOReturnNoFrames) = 0xE00002E0,
+  AS_DEFINE_NAME(kIOReturnMessageTooLarge) = 0xE00002E1,
+  AS_DEFINE_NAME(kIOReturnNotPermitted) = 0xE00002E2,
+  AS_DEFINE_NAME(kIOReturnNoPower) = 0xE00002E3,
+  AS_DEFINE_NAME(kIOReturnNoMedia) = 0xE00002E4,
+  AS_DEFINE_NAME(kIOReturnUnformattedMedia) = 0xE00002E5,
+  AS_DEFINE_NAME(kIOReturnUnsupportedMode) = 0xE00002E6,
+  AS_DEFINE_NAME(kIOReturnUnderrun) = 0xE00002E7,
+  AS_DEFINE_NAME(kIOReturnOverrun) = 0xE00002E8,
+  AS_DEFINE_NAME(kIOReturnDeviceError) = 0xE00002E9,
+  AS_DEFINE_NAME(kIOReturnNoCompletion) = 0xE00002EA,
+  AS_DEFINE_NAME(kIOReturnAborted) = 0xE00002EB,
+  AS_DEFINE_NAME(kIOReturnNoBandwidth) = 0xE00002EC,
+  AS_DEFINE_NAME(kIOReturnNotResponding) = 0xE00002ED,
+  AS_DEFINE_NAME(kIOReturnIsoTooOld) = 0xE00002EE,
+  AS_DEFINE_NAME(kIOReturnIsoTooNew) = 0xE00002EF,
+  AS_DEFINE_NAME(kIOReturnNotFound) = 0xE00002F0,
   AS_DEFINE_NAME(kIOUSBCRCErr) = 0xE0004001,
   AS_DEFINE_NAME(kIOUSBBitstufErr) = 0xE0004002,
   AS_DEFINE_NAME(kIOUSBDataToggleErr) = 0xE0004003,
