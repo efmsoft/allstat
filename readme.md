@@ -10,28 +10,35 @@ The library is written on C ++ and can be built for Windows, Linux and MacOS as 
 ## Types of errors
 The library currently supports the following types of errors / status codes:
 
-### NTSTATUS
+#### NTSTATUS
 Many kernel-mode standard driver routines and driver support routines use the NTSTATUS type for return values.        Additionally, drivers provide an NTSTATUS-typed value in an IRP’s IO_STATUS_BLOCK structure when completing IRPs. The NTSTATUS type is defined in Ntdef.h, and system-supplied status codes are defined in Ntstatus.h.
 
-### Win32 error	
+#### Win32 error	
 Win32 error codes MUST be in the range 0x0000 to 0xFFFF, although Win32 error codes can be used both in 16-bit fields (such as within the HRESULT type specified in section 2.1) as well as 32-bit fields. Most values also have a default message defined, which can be used to map the value to a human-readable text message; when this is done, the Win32 error code is also known as a message identifier.
 
-### HRESULT
+#### HRESULT
 HRESULT is a data type used in Windows operating systems, and the earlier IBM/Microsoft OS/2 operating system, to represent error conditions, and warning conditions. The original purpose of HRESULTs was to formally lay out ranges of error codes for both public and Microsoft internal use in order to prevent collisions between error codes in different subsystems of the OS/2 operating system. HRESULTs are numerical error codes. Various bits within an HRESULT encode information about the nature of the error code, and where it came from.
 HRESULT error codes are most commonly encountered in COM programming, where they form the basis for a standardized COM error handling conventio
 
-### HTTP Status Code
+#### HTTP Status Code
 Hypertext Transfer Protocol (HTTP) response status codes. Status codes are issued by a server in response to a client’s request made to the server. It includes codes from IETF Request for Comments (RFCs), other specifications, and some additional codes used in some common applications of the HTTP. The first digit of the status code specifies one of five standard classes of responses. The message phrases shown are typical, but any human-readable alternative may be provided.
 
-### errno
+#### errno
 Integer value, which is returned by system calls and some library functions in the event of an error to indicate what went wrong. errno is defined by the ISO C standard to be a modifiable lvalue of type int, and must not be explicitly declared; errno may be a macro. errno is thread-local; setting it in one thread does not affect its value in any other thread.
 
-### Kern Return
+#### Kern Return
 Apple Kernel return codes
 
-### Ipp Status
+#### Ipp Status
 The IppStatus constant enumerates the status values returned by the Intel IPP functions, indicating
 whether the operation is error-free.
+
+## Performance
+Data access is implemented through a hash tables. Thus, the maximum number of loops when searching for a value is the maximum number of elements in the branch of the hash table. For the largest types of errors, this size currently does not exceed 150. And on average, this size is 20-30 elements per branch
+
+## Compactness
+The data is organized in such a way that it is possible to avoid including all the data when building the application with link to static version of AllStat library. For example, if the application references only Errno2Str(), then during linking only the common library modules and data tables referring to errno will be linked to the application. In this case, the maximum size in the data tables of each of the error types take error description strings. The library can be built with defined macro AS_NO_DESCRIPTION. In this case, the description data will be an empty string. It is also possible to store description strings in a compressed form (see the AS_COMPRESS_DESCRIPTION macro).
+Please note that when referring to some functions (for example, Name2Item() or GetDescriptionStrC()), the data of all tables will be linked to the application. Functions leading to the linking of all data are collected in the LinkAll.cpp module
 
 ## Examples of usage
 The WhatIs service of EfmSoft company (https://efmsoft.com/what-is/) is built on the use of the AllStat library. You can also use the ErrorLookup utility (the source code of the utility is included in the examples) instead of the standard Microsoft Visual Studio utility
