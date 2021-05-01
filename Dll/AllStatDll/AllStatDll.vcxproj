@@ -31,21 +31,23 @@
     <ClCompile Include="..\..\AllStat\source\generated\tKReturn.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tLResult.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tNtStatus.cpp" />
-    <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Generator.cpp" />
     <ClCompile Include="..\..\AllStat\source\Hresult.cpp" />
     <ClCompile Include="..\..\AllStat\source\Http.cpp" />
     <ClCompile Include="..\..\AllStat\source\IppStatus.cpp" />
     <ClCompile Include="..\..\AllStat\source\Kreturn.cpp" />
+    <ClCompile Include="..\..\AllStat\source\LinkAll.cpp" />
     <ClCompile Include="..\..\AllStat\source\NtStatus.cpp" />
     <ClCompile Include="..\..\AllStat\source\Winerror.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Lib\zlib\zlib.vcxproj">
       <Project>{9819c5c3-2dd0-4dbb-8428-cc49e5ff319e}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
+    <ClInclude Include="..\..\AllStat\source\Generator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
