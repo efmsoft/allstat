@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\AllStat\source\AllStat.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Description.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Errno.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Hresult.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Http.cpp" />
-    <ClCompile Include="..\..\AllStat\source\NtStatus.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Winerror.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tErrno.cpp">
       <Filter>generated</Filter>
     </ClCompile>
@@ -23,26 +16,35 @@
     <ClCompile Include="..\..\AllStat\source\generated\tNtStatus.cpp">
       <Filter>generated</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\AllStat\source\GrabInfo.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tIppStatus.cpp">
       <Filter>generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\AllStat\source\generated\tKReturn.cpp">
       <Filter>generated</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\AllStat\source\IppStatus.cpp" />
-    <ClCompile Include="..\..\AllStat\source\Kreturn.cpp" />
     <ClCompile Include="..\..\AllStat\source\generated\tBugCheck.cpp">
       <Filter>generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\AllStat\source\AllStat.cpp" />
     <ClCompile Include="..\..\AllStat\source\BugCheck.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
+    <ClCompile Include="..\..\AllStat\source\Description.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Errno.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Generator.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Hresult.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Http.cpp" />
+    <ClCompile Include="..\..\AllStat\source\IppStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Kreturn.cpp" />
+    <ClCompile Include="..\..\AllStat\source\LinkAll.cpp" />
+    <ClCompile Include="..\..\AllStat\source\NtStatus.cpp" />
+    <ClCompile Include="..\..\AllStat\source\Winerror.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="generated">
       <UniqueIdentifier>{e0f8b375-756c-47a6-960c-ee0ecb7b2981}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AllStat\source\AllStatDefs.h" />
+    <ClInclude Include="..\..\AllStat\source\Generator.h" />
   </ItemGroup>
 </Project>
