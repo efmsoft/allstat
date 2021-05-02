@@ -18,7 +18,7 @@ Win32 error codes MUST be in the range 0x0000 to 0xFFFF, although Win32 error co
 
 #### HRESULT
 HRESULT is a data type used in Windows operating systems, and the earlier IBM/Microsoft OS/2 operating system, to represent error conditions, and warning conditions. The original purpose of HRESULTs was to formally lay out ranges of error codes for both public and Microsoft internal use in order to prevent collisions between error codes in different subsystems of the OS/2 operating system. HRESULTs are numerical error codes. Various bits within an HRESULT encode information about the nature of the error code, and where it came from.
-HRESULT error codes are most commonly encountered in COM programming, where they form the basis for a standardized COM error handling conventio
+HRESULT error codes are most commonly encountered in COM programming, where they form the basis for a standardized COM error handling convention.
 
 #### HTTP Status Code
 Hypertext Transfer Protocol (HTTP) response status codes. Status codes are issued by a server in response to a client’s request made to the server. It includes codes from IETF Request for Comments (RFCs), other specifications, and some additional codes used in some common applications of the HTTP. The first digit of the status code specifies one of five standard classes of responses. The message phrases shown are typical, but any human-readable alternative may be provided.
