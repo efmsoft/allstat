@@ -39,14 +39,14 @@ Data access is implemented through a hash tables. Thus, the maximum number of lo
 ## Custom build
 You can use macros listed below to make a custom build of allstat library. An example of the project which uses custom build of allstat library can be found by following link - https://github.com/efmsoft/custom_allstat_compile
 
-#### AS_BUILD_<GENERATOR>
-GENERATOR is one of values of **AS_GENERATOR** enumerator. Define macro as 0 to exclude error/status code modules from build. if **AS_CUSTOM_BUILD** macro is not defined, all AS_BUILD_<GENERATOR> assumed to be set to 1
+#### AS_BUILD_[GENERATOR]
+GENERATOR is one of values of **AS_GENERATOR** enumerator. Define macro as 0 to exclude error/status code modules from build. if **AS_CUSTOM_BUILD** macro is not defined, all AS_BUILD_[GENERATOR] assumed to be set to 1
 
 #### AS_COMPRESS_DESCRIPTION
 If **AS_NO_DESCRIPTION** is not defined, descrition strings are included to binary in compressed form. If description strings are compressed, the data size is five times smaller.
 
 #### AS_CUSTOM_BUILD
-If defined, all error/status modules (except explicitly included via defining AS_BUILD_<GENERATOR>=1) are excluded from the build
+If defined, all error/status modules (except explicitly included via defining AS_BUILD_[GENERATOR]=1) are excluded from the build
 
 #### AS_ENUM_PREFIX
 Prefix for generating for error/status enumerators and error/status constants. A prefix can be defined to fix name conflict.
