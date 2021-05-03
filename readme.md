@@ -37,7 +37,7 @@ whether the operation is error-free.
 Data access is implemented through a hash tables. Thus, the maximum number of loops when searching for a value is the maximum number of elements in the branch of the hash table. For the largest types of errors, this size currently does not exceed 150. And on average, this size is 20-30 elements per branch
 
 ## Custom build
-You can use macros listed below to make a custom build of allstat library. An example of the project which uses custom build of allstat library can be found by following link - https://github.com/efmsoft/custom_allstat_compile
+You can use macros listed below to make a custom build of allstat library. An example of the project which uses custom build of allstat library can be found by following link - (custom allstat compile project)[https://github.com/efmsoft/custom_allstat_compile]
 
 #### AS_BUILD_[GENERATOR]
 GENERATOR is one of values of **AS_GENERATOR** enumerator. Define macro as 0 to exclude error/status code modules from build. if **AS_CUSTOM_BUILD** macro is not defined, all AS_BUILD_[GENERATOR] assumed to be set to 1
@@ -60,4 +60,4 @@ The data is organized in such a way that it is possible to avoid including all t
 Please note that when referring to some functions (for example, Name2Item() or GetDescriptionStrC()), the data of all tables will be linked to the application. Functions leading to the linking of all data are collected in the LinkAll.cpp module
 
 ## Examples of usage
-The WhatIs service of EfmSoft company (https://efmsoft.com/what-is/) is built on the use of the AllStat library. You can also use the ErrorLookup utility - https://efmsoft.com/error-lookup-utility/ (the source code of the utility is included in the examples) instead of the standard Microsoft Visual Studio utility
+The (WhatIs service)[https://efmsoft.com/what-is/] of EfmSoft company is built on the use of the **AllStat** library. You can also use the (ErrorLookup utility)[https://efmsoft.com/error-lookup-utility/] (the source code of the utility is included in the examples) instead of the standard utility shipped with Microsoft Visual Studio - errlook.exe.
