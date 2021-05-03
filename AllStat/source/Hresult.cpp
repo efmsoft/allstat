@@ -1,3 +1,13 @@
+#ifndef AS_BUILD_AS_HRESULT
+#ifdef AS_CUSTOM_BUILD
+#define AS_BUILD_AS_HRESULT  0
+#else
+#define AS_BUILD_AS_HRESULT  1
+#endif
+#endif
+
+#if AS_BUILD_AS_HRESULT
+
 #include "Generator.h"
 #include <regex>
 
@@ -69,3 +79,5 @@ ItemArray HresultGenerator::ToInfo(uint32_t hr)
   }
   return aa;
 }
+
+#endif // #if AS_BUILD_AS_HRESULT

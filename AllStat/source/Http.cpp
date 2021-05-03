@@ -1,3 +1,12 @@
+#ifndef AS_BUILD_AS_HTTP
+#ifdef AS_CUSTOM_BUILD
+#define AS_BUILD_AS_HTTP  0
+#else
+#define AS_BUILD_AS_HTTP  1
+#endif
+#endif
+
+#if AS_BUILD_AS_HTTP
 #include "Generator.h"
 
 // DO NOT REMOVE!!! Used by generator script to produce tHtpp.cpp
@@ -106,3 +115,5 @@ static const STATUS_ITEM Http[] =
 
 DEFINE_GENERATOR(HTTP, HttpCode, "HTTP Code", "%i");
 CREATE_GENERATOR(HttpCode);
+
+#endif  // #if AS_BUILD_AS_HTTP

@@ -4,6 +4,16 @@ import re
 START_CODE = \
     "#include \"../AllStatDefs.h\"\n" \
     "\n" \
+    "#ifndef AS_BUILD_AS_{}\n" \
+    "#ifdef AS_CUSTOM_BUILD\n" \
+    "#define AS_BUILD_AS_{}  0\n" \
+    "#else\n" \
+    "#define AS_BUILD_AS_{}  1\n" \
+    "#endif\n" \
+    "#endif\n" \
+    "\n" \
+    "#if AS_BUILD_AS_{}" \
+    "\n" \
     "using namespace AllStat;\n" \
     "\n" \
     "#ifndef __clang__\n" \
@@ -20,7 +30,7 @@ START_CODE2 = \
     "{{\n"
 FORMAT_CODE = "  /*{}*/ {{ (uint32_t){}, \"{}\", AS_DESCR_HANDLE(\"{}\", {}), {}, {} }},\n"
 LAST_ITEM = "  { (uint32_t)0, nullptr }\n"
-END_CODE = "};\n\n"
+END_CODE = "};\n\n" 
 
 
 HASH_TABLE_SIZE = 64
@@ -50,7 +60,10 @@ CODE_FOOTER = \
     "  t.DescrGzLen = 0;\n" \
     "  t.DescrLen = 0;\n" \
     "#endif // AS_COMPRESS_DESCRIPTION && !defined(AS_NO_DESCRIPTION)\n" \
-    "}}\n"
+    "}}\n\n" \
+    "#else\n" \
+    "void {}RefModule() {{}}\n" \
+    "#endif  // #if AS_BUILD_AS_{}\n\n"
 
 HPP_HEADER = \
     "#ifndef {}\n" \
@@ -100,7 +113,7 @@ def hash_code(code_str):
 
 def hash_entry_array():
     hash_entry = []
-    for i in range(0, HASH_TABLE_SIZE):
+    for _ in range(0, HASH_TABLE_SIZE):
         hash_entry.append([])
     return hash_entry
 
@@ -344,7 +357,7 @@ def generate_compressed_description_block(out, context):
     i = 0
     while i < n:
         out.write("  ")
-        for col in range(16):
+        for _ in range(16):
             if i >= n:
                 break
 
@@ -359,13 +372,14 @@ def generate_compressed_description_block(out, context):
 
 
 def generate_status_item_array(out, context):
-    out.write(START_CODE)
+    g = context["generator"]
+    out.write(START_CODE.format(g, g, g, g))
     generate_sources(out, context)
 
     generate_compressed_description_block(out, context)
 
     print("Generating status items array")
-    out.write(START_CODE2.format(context["generator"]))
+    out.write(START_CODE2.format(g))
 
     index = 0
     for item in context["items"]:
@@ -427,7 +441,8 @@ def generate_hpp(out, context, name, os_suffix=False):
 
 
 def generate_footer(out, context):
-    out.write(CODE_FOOTER.format(context["generator"]))
+    g = context["generator"]
+    out.write(CODE_FOOTER.format(g, g, g))
 
 
 def status_item_generation(config, out, callback):
