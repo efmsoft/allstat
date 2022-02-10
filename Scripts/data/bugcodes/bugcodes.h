@@ -2894,7 +2894,7 @@ Notes:
 //
 // MessageText:
 //
-//  DRIVER_RETURNED_HOLDING_CANCEL_LOCK
+//  A driver has returned from a cancel routine that holds the global cancel lock.
 //
 #define DRIVER_RETURNED_HOLDING_CANCEL_LOCK ((ULONG)0x0000011BL)
 

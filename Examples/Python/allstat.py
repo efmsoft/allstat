@@ -30,6 +30,8 @@ class AS_ITEM(ctypes.Structure):
     _pack_ = 1
     _fields_ = [
         ("Code", ctypes.c_int32),
+        ("Previous", ctypes.c_int32),
+        ("Next", ctypes.c_int32),
         ("ConstName", ctypes.c_char_p),
         ("Source", ctypes.c_char_p),
         ("Description", AS_HANDLE),

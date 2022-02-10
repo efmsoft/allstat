@@ -53,6 +53,8 @@ typedef struct _AS_HANDLE
 typedef struct _AS_ITEM
 {
   uint32_t Code;
+  uint32_t Previous;
+  uint32_t Next;
 
   const char* ConstName;
   const char* Source;

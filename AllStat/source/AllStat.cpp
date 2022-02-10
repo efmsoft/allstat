@@ -154,8 +154,19 @@ StatusItemArray AllStat::EntryByCodeArray(
     const STATUS_ITEM& si = table[index];
     if (si.Code == code)
     {
+      STATUS_ITEM_ENTRY e;
+      e.Item = &table[index];
+      e.Next = nullptr;
+      e.Previous = nullptr;
+
+      if (index && table[index - 1].Code != code)
+        e.Previous = &table[index - 1];
+
+      if (table[index + 1].Name && table[index + 1].Code != code)
+        e.Next = &table[index + 1];
+
       if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
-        arr.push_back(&table[index]);
+        arr.push_back(e);
     }
   }
   return arr;
@@ -189,8 +200,13 @@ StatusItemArray AllStat::EntryByNameArray(
     const STATUS_ITEM& si = table[index];
     if (!stricmp(si.Name, name))
     { 
+      STATUS_ITEM_ENTRY e;
+      e.Item = &table[index];
+      e.Next = nullptr;
+      e.Previous = nullptr;
+
       if (TargetOS == AS_OS_ANY || si.OS == AS_OS::AS_OS_ANY || si.OS == TargetOS)
-        arr.push_back(&table[index]);
+        arr.push_back(e);
     }
   }
   return arr;
@@ -212,19 +228,27 @@ std::string AllStat::FormatName(
 }
 
 void AllStat::ItemFromStatusItem(
-  const STATUS_ITEM& si
+  const STATUS_ITEM_ENTRY& si
   , AS_ITEM& item
   , AS_GENERATOR generator
   , AS_GENERATOR formatter
 )
 {
-  item.Code = si.Code;
-  item.ConstName = si.Name;
-  item.Description = si.Description;
-  item.Source = si.Source;
-  item.OS = si.OS;
+  item.Code = si.Item->Code;
+  item.ConstName = si.Item->Name;
+  item.Description = si.Item->Description;
+  item.Source = si.Item->Source;
+  item.OS = si.Item->OS;
   item.Generator = generator;
   item.Formatter = formatter;
+  item.Previous = item.Code;
+  item.Next = item.Code;
+
+  if (si.Previous)
+    item.Previous = si.Previous->Code;
+
+  if (si.Next)
+    item.Next = si.Next->Code;
 }
 
 AS_API std::string AllStat::GetNameStr(const AS_ITEM& item)

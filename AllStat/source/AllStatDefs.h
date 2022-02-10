@@ -33,12 +33,18 @@ namespace AllStat
   const STATUS_ITEM* EntryByCode(uint32_t code, const STATUS_ITEM* table, const int** hashTable);
   const STATUS_ITEM* EntryByName(const char* name, const STATUS_ITEM* table, const int** hashTable);
 
-  typedef std::vector<const STATUS_ITEM*> StatusItemArray;
+  struct STATUS_ITEM_ENTRY
+  {
+    const STATUS_ITEM* Item;
+    const STATUS_ITEM* Previous;
+    const STATUS_ITEM* Next;
+  };
+  typedef std::vector<STATUS_ITEM_ENTRY> StatusItemArray;
   StatusItemArray EntryByCodeArray(uint32_t code, const STATUS_ITEM* table, const int** hashTable);
   StatusItemArray EntryByNameArray(const char* name, const STATUS_ITEM* table, const int** hashTable);
 
   std::string FormatName(uint32_t code, const STATUS_ITEM* item, const char* format);
-  void ItemFromStatusItem(const STATUS_ITEM& si, AS_ITEM& item, AS_GENERATOR generator, AS_GENERATOR formatter);
+  void ItemFromStatusItem(const STATUS_ITEM_ENTRY& si, AS_ITEM& item, AS_GENERATOR generator, AS_GENERATOR formatter);
 
   uint32_t HashStr(const char* p);
   uint32_t HashCode(uint32_t code);

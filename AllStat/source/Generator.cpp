@@ -48,10 +48,10 @@ ItemArray Generator::ToInfo(uint32_t e)
   auto a = EntryByCodeArray(e, Tables.Items, Tables.Code2name);
   for (auto it = a.begin(); it != a.end(); ++it)
   {
-    auto item = *it;
+    const STATUS_ITEM_ENTRY& item = *it;
 
     AS_ITEM ai;
-    ItemFromStatusItem(*item, ai, ID, ID);
+    ItemFromStatusItem(item, ai, ID, ID);
 
     aa.push_back(ai);
   }
@@ -82,6 +82,11 @@ uint32_t Generator::ToItem(const char* constant_name, PAS_ITEM pitem)
   if (e == nullptr)
     return AS_UNKNOWN;
 
-  ItemFromStatusItem(*e, *pitem, ID, ID);
+  STATUS_ITEM_ENTRY si;
+  si.Next = nullptr;
+  si.Previous = nullptr;
+  si.Item = e;
+
+  ItemFromStatusItem(si, *pitem, ID, ID);
   return 0;
 }

@@ -119,9 +119,14 @@ AS_API uint32_t AllStatGetFirst(AS_GENERATOR id, PAS_ENUM_CONTEXT context, PAS_I
   const STATUS_ITEM* pi = p->Tables.Items;
   if (pi->Name)
   {
+    STATUS_ITEM_ENTRY si;
+    si.Next = nullptr;
+    si.Previous = nullptr;
+    si.Item = pi;
+
     context->Table = pi;
     context->ID = p->ID;
-    ItemFromStatusItem(*pi, *item, p->ID, p->ID);
+    ItemFromStatusItem(si, *item, p->ID, p->ID);
     return AS_SUCCESS;
   }
   return AS_UNKNOWN;
@@ -145,7 +150,12 @@ AS_API uint32_t AllStatGetNext(PAS_ENUM_CONTEXT context, PAS_ITEM item)
 
   if (si.Name)
   {
-    ItemFromStatusItem(si, *item, context->ID, context->ID);
+    STATUS_ITEM_ENTRY sti;
+    sti.Next = nullptr;
+    sti.Previous = nullptr;
+    sti.Item = &si;
+
+    ItemFromStatusItem(sti, *item, context->ID, context->ID);
     return AS_SUCCESS;
   }
 
