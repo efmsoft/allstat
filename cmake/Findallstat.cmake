@@ -14,7 +14,7 @@
 
 get_filename_component(ALLSTAT_ROOT "${CMAKE_CURRENT_LIST_DIR}/.." ABSOLUTE) 
 
-set(ALLSTAT_INCLUDE_DIR ${SYNCME_ROOT}/lib/include)
+set(ALLSTAT_INCLUDE_DIR ${ALLSTAT_ROOT}/AllStat/include)
 set(ALLSTAT_LIBRARIES allstat)
 
 add_subdirectory(${ALLSTAT_ROOT}/AllStat)
