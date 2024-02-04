@@ -212,6 +212,9 @@ StatusItemArray AllStat::EntryByNameArray(
   return arr;
 }
 
+#if defined(__GNUC__) || defined(__GNUG__)
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+#endif
 std::string AllStat::FormatName(
   uint32_t code
   , const STATUS_ITEM* item
@@ -226,6 +229,9 @@ std::string AllStat::FormatName(
 
   return buffer;
 }
+#if defined(__GNUC__) || defined(__GNUG__)
+#pragma GCC diagnostic warning "-Wformat-nonliteral"
+#endif
 
 void AllStat::ItemFromStatusItem(
   const STATUS_ITEM_ENTRY& si
