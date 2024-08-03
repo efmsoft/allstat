@@ -3,7 +3,8 @@
 #include <stdint.h>
 
 #pragma pack(push,1) 
-#pragma warning(push, disable : 4201)
+#pragma warning(push)
+#pragma warning(disable : 4201)
 
 typedef enum _AS_OS
 {
