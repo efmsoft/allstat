@@ -3,6 +3,7 @@
 #include <stdint.h>
 
 #pragma pack(push,1) 
+#pragma warning(push, disable : 4201)
 
 typedef enum _AS_OS
 {
@@ -84,6 +85,7 @@ typedef struct _AS_ENUM_CONTEXT
 
 } AS_ENUM_CONTEXT, *PAS_ENUM_CONTEXT;
 
+#pragma warning(pop)
 #pragma pack(pop) 
 
 #define AS_SUCCESS          0
