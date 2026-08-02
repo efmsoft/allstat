@@ -2,7 +2,7 @@ import gzip
 import re
 
 START_CODE = \
-    "#include \"../AllStatDefs.h\"\n" \
+    "#include \"../../AllStatDefs.h\"\n" \
     "\n" \
     "#ifndef AS_BUILD_AS_{}\n" \
     "#ifdef AS_CUSTOM_BUILD\n" \

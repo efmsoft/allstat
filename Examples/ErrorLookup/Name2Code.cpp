@@ -144,7 +144,7 @@ BOOL Name2Code::OnApply()
 
   } while(false);
 
-  Descr = GetDescriptionStr(ai.Description).c_str();
+  Descr = Utf8ToCString(GetDescriptionStr(ai.Description).c_str());
   Code = GetValueStr(ai).c_str();
   Source = ai.Source;
   OS = Code2Name::GetTargetOS(ai.OS);

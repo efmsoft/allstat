@@ -201,7 +201,7 @@ void Code2Name::SelectRow(int row, bool byevent)
   int index = (int)List.GetItemData(row);
   auto& v = Items[index];
 
-  Descr = GetDescriptionStr(v.Description).c_str();
+  Descr = Utf8ToCString(GetDescriptionStr(v.Description).c_str());
   Name = GetNameStr(v).c_str();
   Source = v.Source;
   OS = GetTargetOS(v.OS);

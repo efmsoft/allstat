@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <config>
   <output>
-    <cpp>../allstat/source/generated</cpp>
-    <h>../allstat/include/allstat</h>
+    <cpp>../AllStat/source/generated/en</cpp>
+    <h>../AllStat/include/AllStat</h>
   </output>
   <errno>
     <source>./data/errno/Linux/errno.h</source>
@@ -18,7 +18,7 @@
     <h>ntstatus.h</h>
   </ntstatus>
   <http>
-    <source>../allstat/source/Http.cpp</source>
+    <source>../AllStat/source/Http.cpp</source>
     <cpp>tHttp.cpp</cpp>
     <h>http.h</h>
   </http>
@@ -45,7 +45,7 @@
   <hresult>
     <source>./data/mssdk/**/*.h</source>
     <!--source>z:\tools\mssdk\include\**\*.h</source-->
-    <cpp>tHResult.cpp</cpp>
+    <cpp>tHresult.cpp</cpp>
     <h>hresult.h</h>
   </hresult>
   <map>

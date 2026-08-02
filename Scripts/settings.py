@@ -1,5 +1,6 @@
 import glob
 import os
+import sys
 import xml.etree.ElementTree as et
 
 from xml.dom import minidom

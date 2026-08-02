@@ -10,6 +10,8 @@
 
 #include "resource.h"		// main symbols
 
+CString Utf8ToCString(const char* value);
+
 
 // CErrorLookupApp:
 // See ErrorLookup.cpp for the implementation of this class

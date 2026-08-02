@@ -11,6 +11,41 @@
 #define new DEBUG_NEW
 #endif
 
+CString Utf8ToCString(const char* value)
+{
+  if (!value || !*value)
+    return CString();
+
+  int length = MultiByteToWideChar(
+    CP_UTF8,
+    MB_ERR_INVALID_CHARS,
+    value,
+    -1,
+    nullptr,
+    0);
+
+  if (!length)
+    return CString();
+
+  CString result;
+  wchar_t* buffer = result.GetBuffer(length);
+
+  if (!MultiByteToWideChar(
+        CP_UTF8,
+        MB_ERR_INVALID_CHARS,
+        value,
+        -1,
+        buffer,
+        length))
+  {
+    result.ReleaseBuffer(0);
+    return CString();
+  }
+
+  result.ReleaseBuffer();
+  return result;
+}
+
 
 // CErrorLookupApp
 

@@ -29,11 +29,11 @@
 		9113DB3E25DFEB0E00D8A0F3 /* Http.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Http.cpp; path = ../../AllStat/source/Http.cpp; sourceTree = "<group>"; };
 		9113DB3F25DFEB0E00D8A0F3 /* GrabInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GrabInfo.cpp; path = ../../AllStat/source/GrabInfo.cpp; sourceTree = "<group>"; };
 		9113DB4025DFEB0E00D8A0F3 /* Errno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Errno.cpp; path = ../../AllStat/source/Errno.cpp; sourceTree = "<group>"; };
-		9113DB4225DFEB0E00D8A0F3 /* tErrno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tErrno.cpp; sourceTree = "<group>"; };
-		9113DB4325DFEB0E00D8A0F3 /* tHresult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tHresult.cpp; sourceTree = "<group>"; };
-		9113DB4425DFEB0E00D8A0F3 /* tHttp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tHttp.cpp; sourceTree = "<group>"; };
-		9113DB4525DFEB0E00D8A0F3 /* tNtStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tNtStatus.cpp; sourceTree = "<group>"; };
-		9113DB4625DFEB0E00D8A0F3 /* tLResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tLResult.cpp; sourceTree = "<group>"; };
+		9113DB4225DFEB0E00D8A0F3 /* tErrno.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = en/tErrno.cpp; sourceTree = "<group>"; };
+		9113DB4325DFEB0E00D8A0F3 /* tHresult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = en/tHresult.cpp; sourceTree = "<group>"; };
+		9113DB4425DFEB0E00D8A0F3 /* tHttp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = en/tHttp.cpp; sourceTree = "<group>"; };
+		9113DB4525DFEB0E00D8A0F3 /* tNtStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = en/tNtStatus.cpp; sourceTree = "<group>"; };
+		9113DB4625DFEB0E00D8A0F3 /* tLResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = en/tLResult.cpp; sourceTree = "<group>"; };
 		9113DB4725DFEB0E00D8A0F3 /* AllStat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AllStat.cpp; path = ../../AllStat/source/AllStat.cpp; sourceTree = "<group>"; };
 		9113DB4825DFEB0E00D8A0F3 /* Description.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Description.cpp; path = ../../AllStat/source/Description.cpp; sourceTree = "<group>"; };
 		9113DB4925DFEB0E00D8A0F3 /* Winerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Winerror.cpp; path = ../../AllStat/source/Winerror.cpp; sourceTree = "<group>"; };

@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(AllStat VERSION 1.1.0)
 
+set(
+  ALLSTAT_LANGUAGE
+  "en"
+  CACHE STRING
+  "Language of generated AllStat tables")
+
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -19,7 +25,7 @@ endif ()
 string(TOLOWER ${CMAKE_BUILD_TYPE} ALLSTAT_INSTALL_SUBDIR)
 set(ALLSTAT_INSTALL_DIR ${ALLSTAT_INSTALL_SUBDIR}/bin)
 
-enable_testing() 
+enable_testing()
 
 include_directories(${CMAKE_SOURCE_DIR}/AllStat/include)
 

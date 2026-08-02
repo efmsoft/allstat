@@ -23,31 +23,31 @@
     <ClCompile Include="source\AllStat.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tNtStatus.cpp">
+    <ClCompile Include="source\generated\en\tNtStatus.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tHttp.cpp">
+    <ClCompile Include="source\generated\en\tHttp.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tHresult.cpp">
+    <ClCompile Include="source\generated\en\tHresult.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tLResult.cpp">
+    <ClCompile Include="source\generated\en\tLResult.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
     <ClCompile Include="source\Description.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tErrno.cpp">
+    <ClCompile Include="source\generated\en\tErrno.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tKReturn.cpp">
+    <ClCompile Include="source\generated\en\tKReturn.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tIppStatus.cpp">
+    <ClCompile Include="source\generated\en\tIppStatus.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
-    <ClCompile Include="source\generated\tBugCheck.cpp">
+    <ClCompile Include="source\generated\en\tBugCheck.cpp">
       <Filter>source\generated</Filter>
     </ClCompile>
     <ClCompile Include="source\Generator.cpp">

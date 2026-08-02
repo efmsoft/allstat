@@ -36,6 +36,15 @@ CreateFile() failed. Error: ERROR_FILE_NOT_FOUND
 ## Language support
 The library is written on **C++** and can be built for **Windows**, **Linux** and **MacOS** as a dynamic or static linking library. At the moment, support for the use of the library by projects in **C**, **C++**, **Python**, **Golang** has been implemented. A dynamic library can be used from a project in any programming language by calling the exported functions. Write to us if you have any problems connecting the library to your project.
 
+## Description language
+Generated tables for each description language are stored in a separate directory under `AllStat/source/generated`. A single library build contains one selected language. English is used by default. Select another available language when configuring CMake:
+
+```bash
+cmake -S . -B build -DALLSTAT_LANGUAGE=ru
+```
+
+The selected language changes only the generated description tables. The library API and table format remain unchanged.
+
 ## Types of errors
 The library currently supports the following types of errors / status codes:
 
