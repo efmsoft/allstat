@@ -159,7 +159,7 @@ def ParseArguments():
     parser.add_argument(
         '--language',
         default='ru',
-        help='generated table language directory (default: ru)')
+        help='generated table language directory, for example en, ru or es (default: ru)')
     parser.add_argument(
         'files',
         nargs='*',

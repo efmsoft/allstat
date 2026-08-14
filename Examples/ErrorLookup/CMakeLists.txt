@@ -9,4 +9,4 @@ target_link_libraries(ErrorLookup LINK_PUBLIC allstat)
 target_link_options(ErrorLookup PUBLIC /entry:wWinMainCRTStartup)
 
 set_target_properties(ErrorLookup PROPERTIES FOLDER "Examples")
-install(TARGETS ErrorLookup CONFIGURATIONS ${CMAKE_BUILD_TYPE} RUNTIME DESTINATION ${ALLSTAT_INSTALL_DIR})
+install(TARGETS ErrorLookup CONFIGURATIONS ${ALLSTAT_INSTALL_CONFIGURATIONS} RUNTIME DESTINATION ${ALLSTAT_INSTALL_DIR})

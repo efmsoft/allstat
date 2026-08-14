@@ -19,6 +19,8 @@ if (NOT DEFINED ALLSTAT_LANGUAGE)
     "Language of generated AllStat tables")
 endif ()
 
+set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es)
+
 set(
   ALLSTAT_GENERATED_SOURCE_DIR
   "${CMAKE_CURRENT_SOURCE_DIR}/source/generated/${ALLSTAT_LANGUAGE}")

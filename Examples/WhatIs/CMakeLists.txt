@@ -5,5 +5,5 @@ add_executable(whatis ${SOURCES})
 target_link_libraries (whatis LINK_PUBLIC allstat)
 
 set_target_properties(whatis PROPERTIES FOLDER "Examples")
-install(TARGETS whatis CONFIGURATIONS ${CMAKE_BUILD_TYPE} RUNTIME DESTINATION ${ALLSTAT_INSTALL_DIR})
+install(TARGETS whatis CONFIGURATIONS ${ALLSTAT_INSTALL_CONFIGURATIONS} RUNTIME DESTINATION ${ALLSTAT_INSTALL_DIR})
 

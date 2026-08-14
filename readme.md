@@ -37,11 +37,20 @@ CreateFile() failed. Error: ERROR_FILE_NOT_FOUND
 The library is written on **C++** and can be built for **Windows**, **Linux** and **MacOS** as a dynamic or static linking library. At the moment, support for the use of the library by projects in **C**, **C++**, **Python**, **Golang** has been implemented. A dynamic library can be used from a project in any programming language by calling the exported functions. Write to us if you have any problems connecting the library to your project.
 
 ## Description language
-Generated tables for each description language are stored in a separate directory under `AllStat/source/generated`. A single library build contains one selected language. English is used by default. Select another available language when configuring CMake:
+Generated tables for each description language are stored in a separate directory under `AllStat/source/generated`. A single library build contains one selected language. English is used by default. The currently available languages are English (`en`), Russian (`ru`) and Spanish (`es`). Select another language when configuring CMake:
 
 ```bash
 cmake -S . -B build -DALLSTAT_LANGUAGE=ru
+cmake -S . -B build-es -DALLSTAT_LANGUAGE=es
 ```
+
+For multi-config generators such as Visual Studio, select the configuration when building:
+
+```bash
+cmake --build build-es --config Release
+```
+
+For single-config generators such as Makefiles or Ninja, `Release` is used by default when `CMAKE_BUILD_TYPE` is not specified.
 
 The selected language changes only the generated description tables. The library API and table format remain unchanged.
 
