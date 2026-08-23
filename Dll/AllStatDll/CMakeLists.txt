@@ -9,7 +9,7 @@ if (NOT DEFINED ALLSTAT_LANGUAGE)
     "Language of generated AllStat tables")
 endif ()
 
-set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es)
+set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es zh)
 
 file(TO_CMAKE_PATH ${ALLSTAT_ROOT}/source SRCROOT)
 set(

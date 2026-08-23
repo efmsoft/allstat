@@ -6,7 +6,7 @@ set(
   "en"
   CACHE STRING
   "Language of generated AllStat tables")
-set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es)
+set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es zh)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

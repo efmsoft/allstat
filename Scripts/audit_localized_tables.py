@@ -23,13 +23,23 @@ COMPRESSED_DESCR_PATTERN = re.compile(
 
 HEX_BYTE_PATTERN = re.compile(r'0x([0-9a-fA-F]{2})')
 CYRILLIC_PATTERN = re.compile(r'[\u0400-\u04ff]')
+HAN_PATTERN = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
 
-ES_EXACT_FALLBACK_ALLOWLIST = {
-    '???',
-    'RC',
-    'Service Pack',
-    'WdsCp',
-    'WdsTptMgmt',
+EXACT_FALLBACK_ALLOWLISTS = {
+    'es': {
+        '???',
+        'RC',
+        'Service Pack',
+        'WdsCp',
+        'WdsTptMgmt',
+    },
+    'zh': {
+        '???',
+        'RC',
+        'Service Pack',
+        'WdsCp',
+        'WdsTptMgmt',
+    },
 }
 
 
@@ -293,16 +303,17 @@ def AuditLocalization(english, localized, language, path):
                     ExtractPlaceholders(localized_description),
                     ExtractPlaceholders(english_description)))
 
-        if language == 'es' and CYRILLIC_PATTERN.search(localized_description):
+        if language in ('es', 'zh') and CYRILLIC_PATTERN.search(localized_description):
             errors.append(
                 '{}: item {} {} contains Cyrillic text'.format(
                     path,
                     localized_item['index'],
                     localized_item['name']))
 
-        if language == 'es':
+        if language in EXACT_FALLBACK_ALLOWLISTS:
+            allowlist = EXACT_FALLBACK_ALLOWLISTS[language]
             exact_fallback_allowed = (
-                localized_description in ES_EXACT_FALLBACK_ALLOWLIST or
+                localized_description in allowlist or
                 IsPlaceholderOnly(localized_description))
             if (
                 localized_description == english_description and
@@ -317,13 +328,25 @@ def AuditLocalization(english, localized, language, path):
 
             if (
                 localized_description == localized_item['name'] and
-                localized_description not in ES_EXACT_FALLBACK_ALLOWLIST
+                localized_description not in allowlist
             ):
                 errors.append(
                     '{}: item {} {} uses the constant name as its description'.format(
                         path,
                         localized_item['index'],
                         localized_item['name']))
+
+        if language == 'zh':
+            han_required = (
+                localized_description not in EXACT_FALLBACK_ALLOWLISTS['zh'] and
+                not IsPlaceholderOnly(localized_description))
+            if han_required and not HAN_PATTERN.search(localized_description):
+                errors.append(
+                    '{}: item {} {} has no Simplified Chinese text: {!r}'.format(
+                        path,
+                        localized_item['index'],
+                        localized_item['name'],
+                        localized_description))
 
     return errors
 

@@ -19,7 +19,7 @@ if (NOT DEFINED ALLSTAT_LANGUAGE)
     "Language of generated AllStat tables")
 endif ()
 
-set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es)
+set_property(CACHE ALLSTAT_LANGUAGE PROPERTY STRINGS en ru es zh)
 
 set(
   ALLSTAT_GENERATED_SOURCE_DIR

@@ -1,0 +1,119 @@
+# Reviewed English phrases intentionally preserved in Simplified Chinese descriptions.
+# Product/technology names, API/protocol syntax, commands, flags and literal identifiers only.
+# New preserved phrases make audit_zh_language_quality.py fail until explicitly reviewed.
+Activate As
+Active Directory
+Active Directory GUID
+AD DS
+AD LDS
+Adobe Flash Player
+Annex J
+ATL Server
+BitLocker To
+BitLocker To Go
+BitLocker WMI
+CLR NGEN
+CNAME DNS
+COM IAccessControl
+content boolean term
+content search condition
+CSE FSCTL
+D3D E_FAIL
+DDC/CI Get Timing Report
+DebugActiveProcess API
+DiagTrack XML
+DNAME DNS
+DNS AXFR
+DVD CSS
+DVD Graph Builder
+FIPS RNG
+GET CONFIGURATION
+GPT ID
+HD Audio
+IKE SA
+IN GROUP
+Intel IPP
+IPsec DoS
+IPsec SA
+iSCSI IKE
+JPEG CCIR601
+JPEG DCT
+JPEG Huffman
+JPEG SOF
+Kerberos KDC
+LAN Manager
+LBN REMAP ENABLED
+Libkern C++
+LIST DISK
+Media Foundation
+Microsoft Hyper-V
+MODE SELECT
+MODE SENSE
+MR FIR
+MSMonitorClass WMI
+MSMQ Configuration
+MSMQ Users
+NAP IKEv2
+NAP SoH
+NetShow Theater
+NO DRIVE LETTER
+NO DRIVELETTER
+NtCreateFile API
+NTDS Settings
+OLE DB
+OR NOT
+ORDER BY
+ORDER IN GROUP
+OSS ASN.1
+PDC FSMO
+PID CRC
+QC Trusted User
+R) Windows
+READ DISC INFORMATION
+READ ONLY
+relative interval
+REVERT ON CLOSE
+SIP URI
+SIP URL
+Small Business Server
+SNA LU
+START UNIT
+STREAM ioctl
+System KC
+Test-Cluster Windows PowerShell
+Timing Message
+TPM OwnerAuth
+TPM PCR
+TPM PIN
+u MB
+UNIQUEID DISK
+UTC API
+V2 SST
+WFP MAC
+Win32 x86
+Win32_Tpm WMI
+Windows API
+Windows GDI
+Windows INF
+Windows Installer
+Windows Installer SDK
+Windows Media
+Windows Media DRM Internet
+Windows Media Player
+Windows Media Player ActiveX
+Windows Media SDK
+Windows NT
+Windows PowerShell
+Windows RPC
+Windows Server
+Windows Update
+Windows Vista
+Windows Web
+WinINet API
+WMDRM ITA
+WMI GUID
+WMI MOF
+wmp version
+WMS HTTP
+WUA API
+XSAVE CPUID
